@@ -1,6 +1,6 @@
 <ons-toolbar>
   <div class="left"><ons-back-button>Back</ons-back-button></div>
-  <div class="center">Memeber</div>
+  <div class="center">Calendar</div>
 </ons-toolbar>
 <div class="background"></div>
 <ion-header>
@@ -74,16 +74,16 @@
   </ion-row>
 
   <calendar
-  [eventSource]="eventSource"
-  [calendarMode]="calendar.mode"
-  [currentDate]="calendar.currentDate"
-  (onEventSelected)="onEventSelected($event)"
-  (onTitleChanged)="onViewTitleChanged($event)"
-  (onTimeSelected)="onTimeSelected($event)"
-  startHour="6"
-  endHour="20"
-  step="30"
-  startingDayWeek="1">
+    [eventSource]="eventSource"
+    [calendarMode]="calendar.mode"
+    [currentDate]="calendar.currentDate"
+    (onEventSelected)="onEventSelected($event)"
+    (onTitleChanged)="onViewTitleChanged($event)"
+    (onTimeSelected)="onTimeSelected($event)"
+    startHour="6"
+    endHour="20"
+    step="30"
+    startingDayWeek="1">
   </calendar>
 
 </ion-content>

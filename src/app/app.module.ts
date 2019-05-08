@@ -29,9 +29,9 @@ import { CalendarPageComponent } from './Calendar-page/Calendar-page.component';
     IonicModule,
     NgCalendarModule
   ],
-  entryComponents: [],
+  entryComponents: [logInPageComponent, RgtPageComponent, MainPageComponent, MemberPageComponent, CalendarPageComponent],
   providers: [],
-  bootstrap: [AppComponent, logInPageComponent, RgtPageComponent, MainPageComponent, MemberPageComponent, CalendarPageComponent],
+  bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
