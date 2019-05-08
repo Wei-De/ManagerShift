@@ -1,0 +1,46 @@
+<ons-page  [formGroup]="RgtPageForm">
+  <ons-toolbar>
+    <div class="center">{{title}}</div>
+    <div class="left"><ons-back-button>Back</ons-back-button></div>
+  </ons-toolbar>
+  <div class="center">
+    <ons-row>
+      <ons-input class="input-text"
+                 placeholder="使用者名稱"
+                 name="USER_Name"
+                 formControlName="USER_Name"
+                 float></ons-input>
+    </ons-row>
+    <ons-row>
+      <ons-input class="input-text"
+                 placeholder="身份證字號"
+                 name="USER_ID"
+                 formControlName="USER_ID"
+                 float></ons-input>
+    </ons-row>
+    <ons-row>
+        <div *ngFor="let s of sex; let i = index">
+          <ons-radio
+            name="USER_SEX"
+            [attr.input-id]="'sex-' + i"
+            formControlName="USER_SEX"
+            [attr.value]="s"
+          >
+          </ons-radio>
+          <label class="sex" [attr.for]="'sex-' + i">{{ s }}</label>
+        </div>
+    </ons-row>
+    <ons-row>
+      <ons-input class="input-text"
+                 type="password"
+                 placeholder="密碼"
+                 name="USER_PSW"
+                 formControlName="USER_PSW"
+                 float></ons-input>
+    </ons-row>
+  </div>
+  <ons-row>
+    <ons-button class="pageBtn">註冊</ons-button>
+  </ons-row>
+</ons-page>
+

@@ -1,0 +1,28 @@
+<ons-page>
+  <ons-toolbar>
+    <div class="center">{{title}}</div>
+  </ons-toolbar>
+  <div class="center">
+    <ons-row>
+      <ons-input class="input-text"
+                 placeholder="帳號"
+                 name="USER_ID"
+                 [(ngModel)]="login.USER_ID"
+                 float></ons-input>
+    </ons-row>
+    <ons-row>
+      <ons-input class="input-text"
+                 type="password"
+                 placeholder="密碼"
+                 name="USER_PSW"
+                 [(ngModel)]="login.USER_PSW"
+                 float></ons-input>
+    </ons-row>
+    <ons-row>
+      <ons-button class="pageBtn" (click)="loginOp(navi)">登入</ons-button>
+    </ons-row>
+    <ons-row>
+      <ons-button class="pageBtn" (click)="RgtOp(navi)">註冊</ons-button>
+    </ons-row>
+  </div>
+</ons-page>

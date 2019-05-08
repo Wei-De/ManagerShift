@@ -1,0 +1,14 @@
+ons-row {
+  margin-top: 20%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.center {
+  font-weight: bold;
+}
+.sex {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  font-size: 15px;
+}

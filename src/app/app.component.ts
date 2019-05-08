@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import * as ons from 'onsenui';
 import { OnsNavigator } from 'ngx-onsenui';
+import { logInPageComponent } from './logIn-page/logIn-page.component';
 
 
 @Component({
@@ -10,10 +11,6 @@ import { OnsNavigator } from 'ngx-onsenui';
 })
 export class AppComponent {
 
+  page = logInPageComponent;
   constructor() {}
-  @ViewChild('navi') navi: OnsNavigator;
-
-  title = 'LogIn';
-
-  EntryPage(page: any) {}
 }
