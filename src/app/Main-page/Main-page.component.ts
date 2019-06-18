@@ -4,6 +4,9 @@ import { OnsNavigator } from 'ngx-onsenui';
 // Component
 import { MemberPageComponent } from '../Member-page/Member-page.component';
 import { CalendarPageComponent } from '../Calendar-page/Calendar-page.component';
+import { ChatRoomPageComponent } from '../ChatRoom-page/ChatRoom-page.component';
+import { SalaryPageComponent } from '../Salary-page/Salary-page.component';
+import { SettingPageComponent } from '../Setting-page/Setting-page.component';
 
 
 @Component({
@@ -18,6 +21,9 @@ export class MainPageComponent {
 
   memeber = MemberPageComponent;
   calendar = CalendarPageComponent;
+  chatroom = ChatRoomPageComponent;
+  salary = SalaryPageComponent;
+  setting = SettingPageComponent;
 
     // tslint:disable-next-line:variable-name
     constructor(private _navigator: OnsNavigator) {}

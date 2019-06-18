@@ -1,10 +1,12 @@
 import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController, ModalController } from '@ionic/angular';
 import { formatDate } from '@angular/common';
+import { OnsNavigator, Params } from 'ngx-onsenui';
+
+import { WebService } from '../Calendar-Service/web.service';
 
 import { AppComponent } from '../app.component';
-import { OnsNavigator } from 'ngx-onsenui';
 import { MainPageComponent } from '../Main-page/Main-page.component';
 
 
@@ -15,13 +17,12 @@ import { MainPageComponent } from '../Main-page/Main-page.component';
   styleUrls: ['./Calendar-page.component.css']
 })
 export class CalendarPageComponent implements OnInit {
-
   event = {
     title: '',
     desc: '',
     startTime: '',
     endTime: '',
-    allDay: false
+    // allDay: false
   };
 
   minDate = new Date().toISOString();
@@ -36,10 +37,62 @@ export class CalendarPageComponent implements OnInit {
 
   @ViewChild(CalendarComponent) myCal: CalendarComponent;
 
-  constructor(private alertCtrl: AlertController, @Inject(LOCALE_ID) private locale: string) { }
+  constructor(private alertCtrl: AlertController,
+              public navCtrl: NavController,
+              private modalCtrl: ModalController,
+              // tslint:disable-next-line:variable-name
+              private _navigator: OnsNavigator,
+              @Inject(LOCALE_ID) private locale: string,
+              private calendarService: WebService) {}
 
   ngOnInit() {
     this.resetEvent();
+    // const eventbody = {
+    //   end: {
+    //     dateTime: '2019-05-31T21:00:00+08:00'
+    //   },
+    //   start: {
+    //     dateTime: '2019-05-31T17:00:00+08:00'
+    //   },
+    //   summary: 'Test1',
+    //   location: 'Taipei'
+    // };
+
+    // // insert event
+    // this.calendarService.eventInsert(eventbody).subscribe(res => {
+    //   const addevent = [];
+    //   // 把res放進陣列
+    //   addevent.push(res);
+    //   const eventCopy = {
+    //     title: addevent[0].summary,
+    //     startTime:  new Date(addevent[0].start.dateTime),
+    //     endTime: new Date(addevent[0].end.dateTime),
+    //     location: addevent[0].location
+    //   };
+    //   // 把事件放進行事曆
+    //   this.eventSource.push(eventCopy);
+    //   this.myCal.loadEvents();
+    // });
+
+      // get event
+    this.calendarService.GetEvent().subscribe(res2 => {
+      const getholidays = [];
+      getholidays.push(res2.items);
+      for (let i = 0; i < 74; i++) {
+        const TWholiday = {
+          title: getholidays[0][i].summary,
+          startTime: new Date(getholidays[0][i].start.date),
+          endTime: new Date(getholidays[0][i].end.date)
+        };
+        const start = TWholiday.startTime;
+        const end = TWholiday.endTime;
+        TWholiday.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
+        TWholiday.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() - 1));
+        this.eventSource.push(TWholiday);
+        console.log(TWholiday.startTime);
+      }
+      this.myCal.loadEvents();
+    });
   }
 
   resetEvent() {
@@ -48,7 +101,7 @@ export class CalendarPageComponent implements OnInit {
       desc: '',
       startTime: new Date().toISOString(),
       endTime: new Date().toISOString(),
-      allDay: false
+      // allDay: false
     };
   }
 
@@ -58,20 +111,14 @@ export class CalendarPageComponent implements OnInit {
       title: this.event.title,
       startTime:  new Date(this.event.startTime),
       endTime: new Date(this.event.endTime),
-      allDay: this.event.allDay,
       desc: this.event.desc
     };
 
-    if (eventCopy.allDay) {
-      const start = eventCopy.startTime;
-      const end = eventCopy.endTime;
-
-      eventCopy.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
-      eventCopy.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() + 1));
-    }
-
+    // 把事件放進行事曆
     this.eventSource.push(eventCopy);
+
     this.myCal.loadEvents();
+    console.log(this.eventSource);
     this.resetEvent();
   }
   // Change current month/week/day
@@ -92,10 +139,10 @@ export class CalendarPageComponent implements OnInit {
     this.calendar.mode = mode;
   }
 
-  // Focus today
-  today() {
-    this.calendar.currentDate = new Date();
-  }
+  // // Focus today
+  // today() {
+  //   this.calendar.currentDate = new Date();
+  // }
 
   // Selected date reange and hence title changed
   onViewTitleChanged(title) {
@@ -105,16 +152,19 @@ export class CalendarPageComponent implements OnInit {
   // Calendar event was clicked
   async onEventSelected(event) {
     // Use Angular date pipe for conversion
-    const start = formatDate(event.startTime, 'medium', this.locale);
-    const end = formatDate(event.endTime, 'medium', this.locale);
+    // const start = formatDate(event.startTime, 'medium', this.locale);
+    // const end = formatDate(event.endTime, 'medium', this.locale);
+    const start = formatDate(event.startTime, 'yyyy/MM/dd HH:mm', this.locale);
+    const end = formatDate(event.endTime, 'yyyy/MM/dd HH:mm', this.locale);
 
     const alert = await this.alertCtrl.create({
       header: event.title,
-      subHeader: event.desc,
-      message: 'From: ' + start + '<br><br>To: ' + end,
+      subHeader: event.location,
+      message: start + '-' + end,
       buttons: ['OK']
     });
     alert.present();
+    console.log('11');
   }
 
   // Time slot was clicked
