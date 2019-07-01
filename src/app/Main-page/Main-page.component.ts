@@ -7,6 +7,7 @@ import { CalendarPageComponent } from '../Calendar-page/Calendar-page.component'
 import { ChatRoomPageComponent } from '../ChatRoom-page/ChatRoom-page.component';
 import { SalaryPageComponent } from '../Salary-page/Salary-page.component';
 import { SettingPageComponent } from '../Setting-page/Setting-page.component';
+import { SchedulePageComponent } from '../Schedule-page/Schedule-page.component';
 
 
 @Component({
@@ -24,6 +25,7 @@ export class MainPageComponent {
   chatroom = ChatRoomPageComponent;
   salary = SalaryPageComponent;
   setting = SettingPageComponent;
+  schedule = SchedulePageComponent;
 
     // tslint:disable-next-line:variable-name
     constructor(private _navigator: OnsNavigator) {}

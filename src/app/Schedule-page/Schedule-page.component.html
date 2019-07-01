@@ -1,0 +1,32 @@
+<ons-toolbar>
+    <div class="left"><ons-back-button>Back</ons-back-button></div>
+    <div class="center">Schedule</div>
+  </ons-toolbar>
+  <div class="background"></div>
+  <ion-header>
+    <ion-toolbar color="Medium">
+      <ion-title class="center" >
+        {{ viewTitle }}
+      </ion-title>
+      <ion-buttons slot="end">
+        <button class="searchBtn" ion-button (click)="Layout()">
+          <ion-icon name="search"></ion-icon>
+          安排人力
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <calendar
+      [eventSource]="eventSource"
+      [calendarMode]="calendar.mode"
+      [currentDate]="calendar.currentDate"
+      (onEventSelected)="onEventSelected($event)"
+      (onTitleChanged)="onViewTitleChanged($event)"
+      (onTimeSelected)="onTimeSelected($event)"
+      startHour="5"
+      endHour="26"
+      step="20"
+      startingDayWeek="1">
+    </calendar>
+  </ion-content>

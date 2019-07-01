@@ -1,0 +1,17 @@
+.GPBtn {
+  margin-top: 150px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #050c21;
+  color: #000000;
+  font-size: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.CSBtn {
+  width: 100%;
+  background-color: white;
+  border: 1px solid #050c21;
+  color: #000000;
+  font-size: 20px;
+}

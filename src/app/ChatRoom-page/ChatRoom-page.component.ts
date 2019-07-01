@@ -9,5 +9,6 @@ import { OnsNavigator } from 'ngx-onsenui';
   templateUrl: './ChatRoom-page.component.html',
   styleUrls: ['./ChatRoom-page.component.css']
 })
+// tslint:disable-next-line:class-name
 export class ChatRoomPageComponent {
 }

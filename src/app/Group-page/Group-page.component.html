@@ -1,0 +1,90 @@
+<ons-page>
+  <ons-toolbar>
+    <div class="left"><ons-back-button>Back</ons-back-button></div>
+    <div class="center">{{title}}</div>
+  </ons-toolbar>
+  <div class="center">
+    <ons-row>
+      <ons-button class="GPBtn" (click)="createdialog.show()">創建群組</ons-button>
+    </ons-row>
+    <ons-row>
+      <ons-button class="GPBtn" (click)="searchdialog.show()">搜尋群組</ons-button>
+    </ons-row>
+  </div>
+  <!-- Dialog for create group -->
+  <ons-dialog animation="default" cancelable #createdialog>
+    <div class="dialog">
+      <div class="dialog-container" style="height: 218px;">
+        <ons-page>
+          <ons-toolbar>
+            <div class="center">Create Group</div>
+          </ons-toolbar>
+          <div class="content">
+            <div style="text-align: center">
+              <ons-row>
+                <ons-input class="input-text"
+                           placeholder="群組名稱"
+                           name="CGP_Name"
+                           [(ngModel)]="CreateGroup.CGP_Name"
+                           float></ons-input>
+              </ons-row>
+              <ons-row>
+                <ons-input class="input-text"
+                           placeholder="群組ID"
+                           name="CGP_ID"
+                           [(ngModel)]="CreateGroup.CGP_ID"
+                           float></ons-input>
+              </ons-row>
+              <ons-row>
+                <ons-input class="input-text"
+                           placeholder="群組密碼"
+                           name="CGP_PSW"
+                           [(ngModel)]="CreateGroup.CGP_PSW"
+                           float></ons-input>
+              </ons-row>
+              <ons-row>
+                <ons-button class="CSBtn" (click)="CreateGP()">建立</ons-button>
+              </ons-row>
+            </div>
+          </div>
+        </ons-page>
+      </div>
+    </div>
+  </ons-dialog>
+  <!--Dialog end-->
+  <!-- Dialog for search group -->
+  <ons-dialog animation="default" cancelable #searchdialog>
+    <div class="dialog">
+      <div class="dialog-container" style="height: 175px;">
+        <ons-page>
+          <ons-toolbar>
+            <div class="center">Search Group</div>
+          </ons-toolbar>
+          <div class="content">
+            <div style="text-align: center">
+              <ons-row>
+                <ons-input class="input-text"
+                           placeholder="群組ID"
+                           name="SGP_ID"
+                           [(ngModel)]="SearchGroup.SGP_ID"
+                           float></ons-input>
+              </ons-row>
+              <ons-row>
+                <ons-input class="input-text"
+                           type = "password"
+                           placeholder="群組密碼"
+                           name="SGP_PSW"
+                           [(ngModel)]="SearchGroup.SGP_PSW"
+                           float></ons-input>
+              </ons-row>
+              <ons-row>
+                <ons-button class="CSBtn" (click)="SearchGP()">搜尋</ons-button>
+              </ons-row>
+            </div>
+          </div>
+        </ons-page>
+      </div>
+    </div>
+  </ons-dialog>
+  <!--Dialog end-->
+</ons-page>

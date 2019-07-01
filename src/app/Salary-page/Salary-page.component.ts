@@ -9,5 +9,6 @@ import { OnsNavigator } from 'ngx-onsenui';
   templateUrl: './Salary-page.component.html',
   styleUrls: ['./Salary-page.component.css']
 })
+// tslint:disable-next-line:class-name
 export class SalaryPageComponent {
 }

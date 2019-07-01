@@ -20,13 +20,16 @@ import { CalendarPageComponent } from './Calendar-page/Calendar-page.component';
 import { ChatRoomPageComponent } from './ChatRoom-page/ChatRoom-page.component';
 import { SalaryPageComponent } from './Salary-page/Salary-page.component';
 import { SettingPageComponent } from './Setting-page/Setting-page.component';
+import { GroupPageComponent } from './Group-page/Group-page.component';
+import { SchedulePageComponent } from './Schedule-page/Schedule-page.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent, logInPageComponent, RgtPageComponent, MainPageComponent, MemberPageComponent,
-    CalendarPageComponent, ChatRoomPageComponent, SalaryPageComponent, SettingPageComponent
+    CalendarPageComponent, ChatRoomPageComponent, SalaryPageComponent, SettingPageComponent,
+    GroupPageComponent, SchedulePageComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,9 @@ import { SettingPageComponent } from './Setting-page/Setting-page.component';
                     CalendarPageComponent,
                     ChatRoomPageComponent,
                     SalaryPageComponent,
-                    SettingPageComponent],
+                    SettingPageComponent,
+                    GroupPageComponent,
+                    SchedulePageComponent],
   providers: [WebService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

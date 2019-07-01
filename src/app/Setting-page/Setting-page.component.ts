@@ -9,5 +9,6 @@ import { OnsNavigator } from 'ngx-onsenui';
   templateUrl: './Setting-page.component.html',
   styleUrls: ['./Setting-page.component.css']
 })
+// tslint:disable-next-line:class-name
 export class SettingPageComponent {
 }

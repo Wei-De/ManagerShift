@@ -75,24 +75,24 @@ export class CalendarPageComponent implements OnInit {
     // });
 
       // get event
-    this.calendarService.GetEvent().subscribe(res2 => {
-      const getholidays = [];
-      getholidays.push(res2.items);
-      for (let i = 0; i < 74; i++) {
-        const TWholiday = {
-          title: getholidays[0][i].summary,
-          startTime: new Date(getholidays[0][i].start.date),
-          endTime: new Date(getholidays[0][i].end.date)
-        };
-        const start = TWholiday.startTime;
-        const end = TWholiday.endTime;
-        TWholiday.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
-        TWholiday.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() - 1));
-        this.eventSource.push(TWholiday);
-        console.log(TWholiday.startTime);
-      }
-      this.myCal.loadEvents();
-    });
+    // this.calendarService.GetEvent().subscribe(res2 => {
+    //   const getholidays = [];
+    //   getholidays.push(res2.items);
+    //   for (let i = 0; i < 74; i++) {
+    //     const TWholiday = {
+    //       title: getholidays[0][i].summary,
+    //       startTime: new Date(getholidays[0][i].start.date),
+    //       endTime: new Date(getholidays[0][i].end.date)
+    //     };
+    //     const start = TWholiday.startTime;
+    //     const end = TWholiday.endTime;
+    //     TWholiday.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
+    //     TWholiday.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() - 1));
+    //     this.eventSource.push(TWholiday);
+    //     console.log(TWholiday.startTime);
+    //   }
+    //   this.myCal.loadEvents();
+    // });
   }
 
   resetEvent() {

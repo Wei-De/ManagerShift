@@ -3,6 +3,7 @@ import { AppComponent } from '../app.component';
 import { OnsNavigator } from 'ngx-onsenui';
 import { RgtPageComponent } from '../Rgt-page/Rgt-page.component';
 import { MainPageComponent } from '../Main-page/Main-page.component';
+import { GroupPageComponent } from '../Group-page/Group-page.component';
 import * as ons from 'onsenui';
 
 
@@ -36,7 +37,7 @@ export class logInPageComponent {
       //     buttonLabel: '確定'
       //   });
       // } else {
-        this._navigator.element.pushPage(MainPageComponent, {data: {hoge: 'main'}});
+        this._navigator.element.pushPage(GroupPageComponent, {data: {hoge: 'GP'}});
       // }
     }
     // 註冊
