@@ -3,6 +3,10 @@ import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
 import { AlertController, NavController, ModalController } from '@ionic/angular';
 import { formatDate } from '@angular/common';
 import { OnsNavigator, Params } from 'ngx-onsenui';
+import {
+  CalendarEvent,
+  CalendarEventTimesChangedEvent
+} from 'angular-calendar';
 
 import { WebService } from '../Calendar-Service/web.service';
 
@@ -29,6 +33,7 @@ export class CalendarPageComponent implements OnInit {
 
   eventSource = [];
   viewTitle;
+  selectedDay = new Date();
 
   calendar = {
     mode: 'month',
@@ -104,6 +109,12 @@ export class CalendarPageComponent implements OnInit {
       // allDay: false
     };
   }
+  // show new dialog
+  addEventDialog() {
+    // tslint:disable-next-line:no-angle-bracket-type-assertion
+    // const dialog = (<HTMLElement> document.getElementById('dialogevent'));
+    // dialog.show();
+  }
 
   // Create the right event format and reload source
   addEvent() {
@@ -149,11 +160,34 @@ export class CalendarPageComponent implements OnInit {
     this.viewTitle = title;
   }
 
-  // Calendar event was clicked
+  onEditData(input, index) {
+    this.eventSource[index] = input;
+    this.eventSource = [...this.eventSource];
+  }
+
+  // Calendar event was clicked(編輯事件)
   async onEventSelected(event) {
-    // Use Angular date pipe for conversion
-    // const start = formatDate(event.startTime, 'medium', this.locale);
-    // const end = formatDate(event.endTime, 'medium', this.locale);
+    // tslint:disable-next-line:no-angle-bracket-type-assertion
+    // const dialog = (<HTMLElement> document.getElementById('dialog'));
+    // dialog.show();
+    // dialog.hide().subscribe(result => {
+    //   this.eventSource = result;
+    //   this.eventSource.push(result);
+
+    //   if (result !== 'cancel') {
+    //     // tslint:disable-next-line:one-variable-per-declaration
+    //     const title = result.title,
+    //           desc = result.desc,
+    //           startTime = result.startTime,
+    //           endTime = result.endTime;
+    //     // tslint:disable-next-line:object-literal-key-quotes
+    //     result = { 'title': title, 'desc': desc, 'startTime': startTime, 'endTime': endTime };
+
+    //     this.onEditData(result, event);
+    //   }
+    // });
+
+    const title = this.eventSource[0].title;
     const start = formatDate(event.startTime, 'yyyy/MM/dd HH:mm', this.locale);
     const end = formatDate(event.endTime, 'yyyy/MM/dd HH:mm', this.locale);
 
@@ -164,14 +198,22 @@ export class CalendarPageComponent implements OnInit {
       buttons: ['OK']
     });
     alert.present();
-    console.log('11');
   }
 
   // Time slot was clicked
   onTimeSelected(ev) {
-    const selected = new Date(ev.selectedTime);
-    this.event.startTime = selected.toISOString();
-    selected.setHours(selected.getHours() + 1);
-    this.event.endTime = (selected.toISOString());
+    // const selected = new Date(ev.selectedTime);
+    // this.event.startTime = selected.toISOString();
+    // selected.setHours(selected.getHours() + 1);
+    // this.event.endTime = (selected.toISOString());
+    // if (this.calendar.mode === 'week') {
+      // 叫出Dialog
+      // const selected = new Date(ev.selectedTime);
+      // 新增事件 this.event.startTime = selected.toISOString();
+    // }
+    // tslint:disable-next-line:no-angle-bracket-type-assertion
+    const dialog = (<HTMLElement> document.getElementById('dialogevent'));
+    // dialog.show();
+    console.log(ev);
   }
 }

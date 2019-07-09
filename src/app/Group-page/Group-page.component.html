@@ -1,6 +1,5 @@
 <ons-page>
   <ons-toolbar>
-    <div class="left"><ons-back-button>Back</ons-back-button></div>
     <div class="center">{{title}}</div>
   </ons-toolbar>
   <div class="center">
@@ -9,6 +8,10 @@
     </ons-row>
     <ons-row>
       <ons-button class="GPBtn" (click)="searchdialog.show()">搜尋群組</ons-button>
+    </ons-row>
+    <ons-row>
+    <ons-button class="GPBtn" (click)="logout()">登出</ons-button>
+    <p style="font-size: 20px;">目前登入人員：{{loginData.currentUser}}</p>
     </ons-row>
   </div>
   <!-- Dialog for create group -->

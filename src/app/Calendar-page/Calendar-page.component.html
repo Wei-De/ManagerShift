@@ -23,7 +23,8 @@
         <div class="dialog-container" style="height: 350px;">
           <ons-page>
             <ons-toolbar>
-              <div class="center">New Event</div>
+              <div class=
+              "center">New Event</div>
             </ons-toolbar>
             <div class="content">
               <div style="text-align: center">
@@ -42,7 +43,7 @@
                   <ion-datetime displayFormat="YYYY/MM/DD HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
                 </ion-item>
                 <ion-button color="dark" expand="block" (click)="addEvent()">Add Event</ion-button>
-                <ion-button color="dark" expand="block" (click)="dialog.hide()">Cancel</ion-button>
+                <ion-button color="dark" expand="block">Cancel</ion-button>
               </div>
             </div>
           </ons-page>
@@ -84,7 +85,7 @@
     [currentDate]="calendar.currentDate"
     (onEventSelected)="onEventSelected($event)"
     (onTitleChanged)="onViewTitleChanged($event)"
-    (onTimeSelected)="onTimeSelected($event)"
+    (onTimeSelected)="dialog.show()"
     startHour="5"
     endHour="26"
     step="20"

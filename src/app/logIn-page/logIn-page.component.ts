@@ -1,4 +1,4 @@
-import { Component, Injector } from '@angular/core';
+import { Component, Injector, OnInit, Input, Output, ViewChild } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { OnsNavigator } from 'ngx-onsenui';
 import { RgtPageComponent } from '../Rgt-page/Rgt-page.component';
@@ -15,7 +15,7 @@ import * as ons from 'onsenui';
 })
 
 // tslint:disable-next-line:class-name
-export class logInPageComponent {
+export class logInPageComponent implements OnInit {
 
   title = 'LogIn';
 
@@ -24,21 +24,38 @@ export class logInPageComponent {
       USER_ID: '',
       USER_PSW: ''
     };
+    datazzz = this.login.USER_ID;
+    loading = false;
+    loginData: any = {
+      currentUser: {},
+      isLogin: false
+    };
 
+    ngOnInit() {
+      if (localStorage.getItem('loginData')) {
+        this.loginData = JSON.parse(localStorage.getItem('loginData'));
+      } else {
+        this.loginData.currentUser = {};
+        this.loginData.isLogin = false;
+        localStorage.setItem('loginData', JSON.stringify(this.loginData));
+      }
+    }
     // tslint:disable-next-line:variable-name
     constructor(private _navigator: OnsNavigator, private inj: Injector) {}
 
     // 登入
     loginOp() {
-      // if (this.login.USER_ID.length === 0 || this.login.USER_PSW.length === 0) {
-      //   ons.notification.alert({
-      //     title: '警告',
-      //     message: '請輸入帳號密碼！',
-      //     buttonLabel: '確定'
-      //   });
-      // } else {
+      if (this.login.USER_ID.length === 0 || this.login.USER_PSW.length === 0) {
+        ons.notification.alert({
+          title: '警告',
+          message: '請輸入帳號密碼！',
+          buttonLabel: '確定'
+        });
+      } else {
+        this.loading = true;
         this._navigator.element.pushPage(GroupPageComponent, {data: {hoge: 'GP'}});
-      // }
+        console.log(this.login);
+      }
     }
     // 註冊
     RgtOp() {

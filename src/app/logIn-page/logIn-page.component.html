@@ -2,7 +2,8 @@
   <ons-toolbar>
     <div class="center">{{title}}</div>
   </ons-toolbar>
-  <div class="center">
+  <ons-progress-bar indeterminate *ngIf="loading"></ons-progress-bar>
+  <div class="center" *ngIf="!loginData.isLogin">
     <ons-row>
       <ons-input class="input-text"
                  placeholder="帳號"

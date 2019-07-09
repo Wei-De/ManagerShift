@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { OnsNavigator, Params } from 'ngx-onsenui';
-import { FormGroup, FormControl } from '@angular/forms';
+import * as ons from 'onsenui';
 
 
 @Component({
@@ -24,13 +24,7 @@ export class RgtPageComponent implements OnInit {
   };
 
   ngOnInit() {
-    // this.RgtPageForm = new FormGroup({
-    //   USER_Name: new FormControl(''),
-    //   USER_ID: new FormControl(''),
-    //   // USER_BD: new FormControl(''),
-    //   USER_SEX: new FormControl(''),
-    //   USER_PSW: new FormControl('')
-    // });
+
   }
 
   // tslint:disable-next-line:variable-name
@@ -38,11 +32,12 @@ export class RgtPageComponent implements OnInit {
     console.log('parameters:', _params.data);
   }
   RgtUP() {
-    // const formData = this.RgtPageForm.getRawValue();
-    // this.RgtData.USER_Name = formData.EVENT_Title;
-    // this.RgtData.USER_ID = formData.EVENT_Location;
-    // this.RgtData.USER_SEX = formData.EVENT_startTime;
-    // this.RgtData.USER_PSW = formData.EVENT_endTime;
     console.log(this.RgtData);
+    ons.notification.alert({
+      title: '人員註冊',
+      message: '註冊成功',
+      buttonLabel: '確定'
+    })
+    .then(this._navigator.element.popPage());
   }
 }

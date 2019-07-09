@@ -23,6 +23,9 @@ import { SettingPageComponent } from './Setting-page/Setting-page.component';
 import { GroupPageComponent } from './Group-page/Group-page.component';
 import { SchedulePageComponent } from './Schedule-page/Schedule-page.component';
 
+// Dialog Component
+// import { AddEventDialogComponent } from './Calendar-page/AddEventdialog-page/AddEventdialog-page.component';
+
 
 
 @NgModule({
