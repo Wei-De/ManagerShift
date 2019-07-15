@@ -23,8 +23,7 @@
         <div class="dialog-container" style="height: 350px;">
           <ons-page>
             <ons-toolbar>
-              <div class=
-              "center">New Event</div>
+              <div class="center">New Event</div>
             </ons-toolbar>
             <div class="content">
               <div style="text-align: center">
@@ -63,7 +62,6 @@
     <ion-col size="4">
       <ion-button expand="block" [color]="calendar.mode == 'day' ? 'Medium' : 'Dark'" (click)="changeMode('day')">Day</ion-button>
     </ion-col>
-
     <!-- Move back one screen of the slides -->
     <!-- <ion-col size="6" text-left>
       <ion-button fill="clear" (click)="back()">
@@ -85,7 +83,7 @@
     [currentDate]="calendar.currentDate"
     (onEventSelected)="onEventSelected($event)"
     (onTitleChanged)="onViewTitleChanged($event)"
-    (onTimeSelected)="dialog.show()"
+    (onTimeSelected)="onTimeSelected($event)"
     startHour="5"
     endHour="26"
     step="20"

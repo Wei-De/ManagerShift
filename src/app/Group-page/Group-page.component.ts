@@ -1,4 +1,4 @@
-import { Component, ViewChild, Input, Output, OnInit } from '@angular/core';
+import { Component, ViewChild, Input, Output, OnInit, AfterViewInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { OnsNavigator } from 'ngx-onsenui';
 import * as ons from 'onsenui';
@@ -14,12 +14,9 @@ import { logInPageComponent } from '../logIn-page/logIn-page.component';
   styleUrls: ['./Group-page.component.css']
 })
 // tslint:disable-next-line:class-name
-export class GroupPageComponent implements OnInit {
+export class GroupPageComponent {
 
-  // @ViewChild('abc')data: logInPageComponent;
   title = '選擇創建群組或搜尋群組';
-
-  // a = this.data.login.USER_ID;
 
   CreateGroup = {
     CGP_Name: '',
@@ -39,7 +36,6 @@ export class GroupPageComponent implements OnInit {
   // tslint:disable-next-line:variable-name
   constructor(private _navigator: OnsNavigator) {}
 
-  ngOnInit() {}
   // 登出
   logout() {
     this.loginData.currentUser = {};

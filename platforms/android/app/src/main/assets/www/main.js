@@ -848,6 +848,63 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/Calendar-Service/web.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/Calendar-Service/web.service.ts ***!
+  \*************************************************/
+/*! exports provided: WebService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WebService", function() { return WebService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+
+var httpOptions = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+        Authorization: 
+        // tslint:disable-next-line:max-line-length
+        'Bearer ya29.Gl0iB6TAtPxLrCvrYxUU4E7f-CGWj6xUl1aoflPp7jNz-zPOcwXRd1POLEf65XyJC14H0i5ZVLuicdMdnHXT6FQ9Jbb_h4F63VMLpCwuEmphdvcwsINl00s2Xqaanu0',
+        'Content-Type': 'application/json'
+    })
+};
+var httpOptionsholidays = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+        Authorization: 
+        // tslint:disable-next-line:max-line-length
+        'Bearer ya29.Gl1GB1ew2atVUrAoaaaNltdMpHPaOL8r_Bzd9et7HXhDgTCO0C981pSDZGEQJeJsLi9sNMYE_HhCjGmsj79X7398oGFacxZzsD2dYhbI4LBWDsQcDmMM_ZT0lgzV12s',
+        'Content-Type': 'application/json'
+    })
+};
+var WebService = /** @class */ (function () {
+    function WebService(http) {
+        this.http = http;
+    }
+    WebService.prototype.eventInsert = function (data) {
+        var googleUrl = 'https://www.googleapis.com/calendar/v3/calendars/jeanchen861118%40gmail.com/events?key=AIzaSyDY6un1bXW5aicpE4IsX4xBRX7plUjAw6M';
+        return this.http.post(googleUrl, data, httpOptions);
+    };
+    WebService.prototype.GetEvent = function () {
+        var googleUrl = 
+        // tslint:disable-next-line:max-line-length
+        'https://www.googleapis.com/calendar/v3/calendars/zh.taiwan%23holiday%40group.v.calendar.google.com/events?key=AIzaSyDY6un1bXW5aicpE4IsX4xBRX7plUjAw6M';
+        return this.http.get(googleUrl, httpOptionsholidays);
+    };
+    WebService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], WebService);
+    return WebService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/Calendar-page/Calendar-page.component.css":
 /*!***********************************************************!*\
   !*** ./src/app/Calendar-page/Calendar-page.component.css ***!
@@ -855,7 +912,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  padding-right: 10%;\r\n}\r\n.center {\r\n  font-weight: bold;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQ2FsZW5kYXItcGFnZS9DYWxlbmRhci1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGtCQUFrQjtBQUNwQjtBQUNBO0VBQ0UsaUJBQWlCO0FBQ25CIiwiZmlsZSI6InNyYy9hcHAvQ2FsZW5kYXItcGFnZS9DYWxlbmRhci1wYWdlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJvbnMtcm93IHtcclxuICBtYXJnaW4tdG9wOiAyMCU7XHJcbiAgcGFkZGluZy1sZWZ0OiAxMCU7XHJcbiAgcGFkZGluZy1yaWdodDogMTAlO1xyXG59XHJcbi5jZW50ZXIge1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcbiJdfQ== */"
+module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  padding-right: 10%;\r\n}\r\n.center {\r\n  font-weight: bold;\r\n}\r\n.button {\r\n  background: black;\r\n  width: 100%;\r\n  margin-top: 15px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQ2FsZW5kYXItcGFnZS9DYWxlbmRhci1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGtCQUFrQjtBQUNwQjtBQUNBO0VBQ0UsaUJBQWlCO0FBQ25CO0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsV0FBVztFQUNYLGdCQUFnQjtBQUNsQiIsImZpbGUiOiJzcmMvYXBwL0NhbGVuZGFyLXBhZ2UvQ2FsZW5kYXItcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsib25zLXJvdyB7XHJcbiAgbWFyZ2luLXRvcDogMjAlO1xyXG4gIHBhZGRpbmctbGVmdDogMTAlO1xyXG4gIHBhZGRpbmctcmlnaHQ6IDEwJTtcclxufVxyXG4uY2VudGVyIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5cclxuLmJ1dHRvbiB7XHJcbiAgYmFja2dyb3VuZDogYmxhY2s7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgbWFyZ2luLXRvcDogMTVweDtcclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -866,7 +923,7 @@ module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  p
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ons-toolbar>\r\n  <div class=\"left\"><ons-back-button>Back</ons-back-button></div>\r\n  <div class=\"center\">Calendar</div>\r\n</ons-toolbar>\r\n<div class=\"background\"></div>\r\n  <ion-header>\r\n    <ion-toolbar color=\"primary\">\r\n      <ion-title>\r\n        {{ viewTitle }}\r\n      </ion-title>\r\n      <ion-buttons slot=\"end\">\r\n        <ion-button (click)=\"today()\">Today</ion-button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n\r\n  <ion-content>\r\n    <!-- Card for adding a new event -->\r\n    <!-- <ion-card>\r\n      <ion-card-header tappable (click)=\"collapseCard = !collapseCard\">\r\n        <ion-card-title>New Event</ion-card-title>\r\n      </ion-card-header>\r\n      <ion-card-content *ngIf=\"!collapseCard\">\r\n\r\n        <ion-item>\r\n          <ion-input type=\"text\" placeholder=\"Title\" [(ngModel)]=\"event.title\"></ion-input>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-input type=\"text\" placeholder=\"Description\" [(ngModel)]=\"event.desc\"></ion-input>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-label>Start</ion-label>\r\n          <ion-datetime displayFormat=\"MM/DD/YYYY HH:mm\" pickerFormat=\"MMM D:HH:mm\" [(ngModel)]=\"event.startTime\" [min]=\"minDate\"></ion-datetime>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-label>End</ion-label>\r\n          <ion-datetime displayFormat=\"MM/DD/YYYY HH:mm\" pickerFormat=\"MMM D:HH:mm\" [(ngModel)]=\"event.endTime\" [min]=\"minDate\"></ion-datetime>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-label>All Day?</ion-label>\r\n          <ion-checkbox [(ngModel)]=\"event.allDay\"></ion-checkbox>\r\n        </ion-item>\r\n        <ion-button fill=\"outline\" expand=\"block\" (click)=\"addEvent()\" [disabled]=\"event.title == ''\">Add Event</ion-button>\r\n\r\n      </ion-card-content>\r\n    </ion-card> -->\r\n\r\n    <ion-row>\r\n      <!-- Change the displayed calendar mode -->\r\n      <ion-col size=\"4\">\r\n        <ion-button expand=\"block\" [color]=\"calendar.mode == 'month' ? 'primary' : 'secondary'\" (click)=\"changeMode('month')\">Month</ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"4\">\r\n        <ion-button expand=\"block\" [color]=\"calendar.mode == 'week' ? 'primary' : 'secondary'\" (click)=\"changeMode('week')\">Week</ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"4\">\r\n        <ion-button expand=\"block\" [color]=\"calendar.mode == 'day' ? 'primary' : 'secondary'\" (click)=\"changeMode('day')\">Day</ion-button>\r\n      </ion-col>\r\n\r\n      <!-- Move back one screen of the slides -->\r\n      <ion-col size=\"6\" text-left>\r\n        <ion-button fill=\"clear\" (click)=\"back()\">\r\n          <ion-icon name=\"arrow-back\" slot=\"icon-only\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n\r\n      <!-- Move forward one screen of the slides -->\r\n      <ion-col size=\"6\" text-right>\r\n        <ion-button fill=\"clear\" (click)=\"next()\">\r\n          <ion-icon name=\"arrow-forward\" slot=\"icon-only\"></ion-icon>\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n\r\n    <calendar\r\n    [eventSource]=\"eventSource\"\r\n    [calendarMode]=\"calendar.mode\"\r\n    [currentDate]=\"calendar.currentDate\"\r\n    (onEventSelected)=\"onEventSelected($event)\"\r\n    (onTitleChanged)=\"onViewTitleChanged($event)\"\r\n    (onTimeSelected)=\"onTimeSelected($event)\"\r\n    startHour=\"5\"\r\n    endHour=\"27.5\"\r\n    step=\"30\"\r\n    startingDayWeek=\"1\">\r\n    </calendar>\r\n  </ion-content>\r\n"
+module.exports = "<ons-toolbar>\r\n  <div class=\"left\"><ons-back-button>Back</ons-back-button></div>\r\n  <div class=\"center\">Calendar</div>\r\n</ons-toolbar>\r\n<div class=\"background\"></div>\r\n<ion-header>\r\n  <ion-toolbar color=\"Medium\">\r\n    <ion-title class=\"center\" >\r\n      {{ viewTitle }}\r\n    </ion-title>\r\n      <ion-buttons class=\"addBtn\" slot=\"end\">\r\n        <button ion-button (click)=\"dialog.show()\">\r\n          <ion-icon name=\"add\"></ion-icon>\r\n        </button>\r\n      </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n\r\n  <!-- Dialog for adding a new event -->\r\n  <ons-dialog animation=\"default\" cancelable #dialog>\r\n      <div class=\"dialog\">\r\n        <div class=\"dialog-container\" style=\"height: 350px;\">\r\n          <ons-page>\r\n            <ons-toolbar>\r\n              <div class=\"center\">New Event</div>\r\n            </ons-toolbar>\r\n            <div class=\"content\">\r\n              <div style=\"text-align: center\">\r\n                <ion-item>\r\n                  <ion-input type=\"text\" placeholder=\"Title\" [(ngModel)]=\"event.title\"></ion-input>\r\n                </ion-item>\r\n                <ion-item>\r\n                  <ion-input type=\"text\" placeholder=\"Location\" [(ngModel)]=\"event.desc\"></ion-input>\r\n                </ion-item>\r\n                <ion-item>\r\n                  <ion-label>Start</ion-label>\r\n                  <ion-datetime displayFormat=\"YYYY/MM/DD HH:mm\" pickerFormat=\"MMM D:HH:mm\" [(ngModel)]=\"event.startTime\" [min]=\"minDate\"></ion-datetime>\r\n                </ion-item>\r\n                <ion-item>\r\n                  <ion-label>End</ion-label>\r\n                  <ion-datetime displayFormat=\"YYYY/MM/DD HH:mm\" pickerFormat=\"MMM D:HH:mm\" [(ngModel)]=\"event.endTime\" [min]=\"minDate\"></ion-datetime>\r\n                </ion-item>\r\n                <ion-button color=\"dark\" expand=\"block\" (click)=\"addEvent()\">Add Event</ion-button>\r\n                <ion-button color=\"dark\" expand=\"block\">Cancel</ion-button>\r\n              </div>\r\n            </div>\r\n          </ons-page>\r\n        </div>\r\n      </div>\r\n  </ons-dialog>\r\n  <!--Dialog end-->\r\n\r\n  <ion-row>\r\n    <!-- Change the displayed calendar mode -->\r\n    <ion-col size=\"4\">\r\n      <ion-button expand=\"block\" [color]=\"calendar.mode == 'month' ? 'Medium' : 'Dark'\" (click)=\"changeMode('month')\">Month</ion-button>\r\n    </ion-col>\r\n    <ion-col size=\"4\">\r\n      <ion-button expand=\"block\" [color]=\"calendar.mode == 'week' ? 'Medium' : 'Dark'\" (click)=\"changeMode('week')\">Week</ion-button>\r\n    </ion-col>\r\n    <ion-col size=\"4\">\r\n      <ion-button expand=\"block\" [color]=\"calendar.mode == 'day' ? 'Medium' : 'Dark'\" (click)=\"changeMode('day')\">Day</ion-button>\r\n    </ion-col>\r\n\r\n    <!-- Move back one screen of the slides -->\r\n    <!-- <ion-col size=\"6\" text-left>\r\n      <ion-button fill=\"clear\" (click)=\"back()\">\r\n        <ion-icon name=\"arrow-back\" slot=\"icon-only\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col> -->\r\n\r\n    <!-- Move forward one screen of the slides -->\r\n    <!-- <ion-col size=\"6\" text-right>\r\n      <ion-button fill=\"clear\" (click)=\"next()\">\r\n        <ion-icon name=\"arrow-forward\" slot=\"icon-only\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col> -->\r\n  </ion-row>\r\n\r\n  <calendar\r\n    [eventSource]=\"eventSource\"\r\n    [calendarMode]=\"calendar.mode\"\r\n    [currentDate]=\"calendar.currentDate\"\r\n    (onEventSelected)=\"onEventSelected($event)\"\r\n    (onTitleChanged)=\"onViewTitleChanged($event)\"\r\n    (onTimeSelected)=\"onTimeSelected($event)\"\r\n    (onCurrentDateChanged)=\"onCurrentDateChanged($event)\"\r\n    startHour=\"5\"\r\n    endHour=\"26\"\r\n    step=\"20\"\r\n    startingDayWeek=\"1\">\r\n  </calendar>\r\n\r\n</ion-content>\r\n"
 
 /***/ }),
 
@@ -885,31 +942,86 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var ngx_onsenui__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-onsenui */ "./node_modules/ngx-onsenui/ngx-onsenui.js");
+/* harmony import */ var _Calendar_Service_web_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Calendar-Service/web.service */ "./src/app/Calendar-Service/web.service.ts");
+
+
 
 
 
 
 
 var CalendarPageComponent = /** @class */ (function () {
-    function CalendarPageComponent(alertCtrl, locale) {
+    function CalendarPageComponent(alertCtrl, navCtrl, modalCtrl, 
+    // tslint:disable-next-line:variable-name
+    _navigator, locale, calendarService) {
         this.alertCtrl = alertCtrl;
+        this.navCtrl = navCtrl;
+        this.modalCtrl = modalCtrl;
+        this._navigator = _navigator;
         this.locale = locale;
+        this.calendarService = calendarService;
         this.event = {
             title: '',
             desc: '',
             startTime: '',
             endTime: '',
-            allDay: false
         };
         this.minDate = new Date().toISOString();
         this.eventSource = [];
+        this.selectedDay = new Date();
         this.calendar = {
             mode: 'month',
-            currentDate: new Date(),
+            currentDate: new Date()
         };
     }
     CalendarPageComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.resetEvent();
+        // const eventbody = {
+        //   end: {
+        //     dateTime: '2019-05-31T21:00:00+08:00'
+        //   },
+        //   start: {
+        //     dateTime: '2019-05-31T17:00:00+08:00'
+        //   },
+        //   summary: 'Test1',
+        //   location: 'Taipei'
+        // };
+        // // insert event
+        // this.calendarService.eventInsert(eventbody).subscribe(res => {
+        //   const addevent = [];
+        //   // 把res放進陣列
+        //   addevent.push(res);
+        //   const eventCopy = {
+        //     title: addevent[0].summary,
+        //     startTime:  new Date(addevent[0].start.dateTime),
+        //     endTime: new Date(addevent[0].end.dateTime),
+        //     location: addevent[0].location
+        //   };
+        //   // 把事件放進行事曆
+        //   this.eventSource.push(eventCopy);
+        //   this.myCal.loadEvents();
+        // });
+        // get event
+        this.calendarService.GetEvent().subscribe(function (res2) {
+            var getholidays = [];
+            getholidays.push(res2.items);
+            for (var i = 0; i < 74; i++) {
+                var TWholiday = {
+                    title: getholidays[0][i].summary,
+                    startTime: new Date(getholidays[0][i].start.date),
+                    endTime: new Date(getholidays[0][i].end.date)
+                };
+                var start = TWholiday.startTime;
+                var end = TWholiday.endTime;
+                TWholiday.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
+                TWholiday.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() - 1));
+                _this.eventSource.push(TWholiday);
+                console.log(TWholiday.startTime);
+            }
+            _this.myCal.loadEvents();
+        });
     };
     CalendarPageComponent.prototype.resetEvent = function () {
         this.event = {
@@ -917,28 +1029,28 @@ var CalendarPageComponent = /** @class */ (function () {
             desc: '',
             startTime: new Date().toISOString(),
             endTime: new Date().toISOString(),
-            allDay: false
         };
     };
+    // show new dialog
+    CalendarPageComponent.prototype.addEventDialog = function () {
+        // tslint:disable-next-line:no-angle-bracket-type-assertion
+        var dialog = document.getElementById('dialogevent');
+        // dialog.show();
+    };
     // Create the right event format and reload source
-    // addEvent() {
-    //   const eventCopy = {
-    //     title: this.event.title,
-    //     startTime:  new Date(this.event.startTime),
-    //     endTime: new Date(this.event.endTime),
-    //     allDay: this.event.allDay,
-    //     desc: this.event.desc
-    //   };
-    //   if (eventCopy.allDay) {
-    //     const start = eventCopy.startTime;
-    //     const end = eventCopy.endTime;
-    //     eventCopy.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
-    //     eventCopy.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() + 1));
-    //   }
-    //   this.eventSource.push(eventCopy);
-    //   this.myCal.loadEvents();
-    //   this.resetEvent();
-    // }
+    CalendarPageComponent.prototype.addEvent = function () {
+        var eventCopy = {
+            title: this.event.title,
+            startTime: new Date(this.event.startTime),
+            endTime: new Date(this.event.endTime),
+            desc: this.event.desc
+        };
+        // 把事件放進行事曆
+        this.eventSource.push(eventCopy);
+        this.myCal.loadEvents();
+        console.log(this.eventSource);
+        this.resetEvent();
+    };
     // Change current month/week/day
     CalendarPageComponent.prototype.next = function () {
         // tslint:disable-next-line:no-string-literal
@@ -954,27 +1066,28 @@ var CalendarPageComponent = /** @class */ (function () {
     CalendarPageComponent.prototype.changeMode = function (mode) {
         this.calendar.mode = mode;
     };
-    // Focus today
-    CalendarPageComponent.prototype.today = function () {
-        this.calendar.currentDate = new Date();
-    };
+    // // Focus today
+    // today() {
+    //   this.calendar.currentDate = new Date();
+    // }
     // Selected date reange and hence title changed
     CalendarPageComponent.prototype.onViewTitleChanged = function (title) {
         this.viewTitle = title;
     };
-    // Calendar event was clicked
+    // Calendar event was clicked(編輯事件)
     CalendarPageComponent.prototype.onEventSelected = function (event) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var start, end, alert;
+            var title, start, end, alert;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        start = Object(_angular_common__WEBPACK_IMPORTED_MODULE_4__["formatDate"])(event.startTime, 'medium', this.locale);
-                        end = Object(_angular_common__WEBPACK_IMPORTED_MODULE_4__["formatDate"])(event.endTime, 'medium', this.locale);
+                        title = this.eventSource[0].title;
+                        start = Object(_angular_common__WEBPACK_IMPORTED_MODULE_4__["formatDate"])(event.startTime, 'yyyy/MM/dd HH:mm', this.locale);
+                        end = Object(_angular_common__WEBPACK_IMPORTED_MODULE_4__["formatDate"])(event.endTime, 'yyyy/MM/dd HH:mm', this.locale);
                         return [4 /*yield*/, this.alertCtrl.create({
                                 header: event.title,
-                                subHeader: event.desc,
-                                message: 'From: ' + start + '<br><br>To: ' + end,
+                                subHeader: event.location,
+                                message: start + '-' + end,
                                 buttons: ['OK']
                             })];
                     case 1:
@@ -991,6 +1104,13 @@ var CalendarPageComponent = /** @class */ (function () {
         this.event.startTime = selected.toISOString();
         selected.setHours(selected.getHours() + 1);
         this.event.endTime = (selected.toISOString());
+        // tslint:disable-next-line:no-angle-bracket-type-assertion
+        // const dialog = (<HTMLElement> document.getElementById('dialog'));
+        // dialog.show();
+        // console.log(selected);
+    };
+    CalendarPageComponent.prototype.onCurrentDateChanged = function (ev) {
+        console.log(ev);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])(ionic2_calendar_calendar__WEBPACK_IMPORTED_MODULE_1__["CalendarComponent"]),
@@ -1003,10 +1123,176 @@ var CalendarPageComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./Calendar-page.component.html */ "./src/app/Calendar-page/Calendar-page.component.html"),
             styles: [__webpack_require__(/*! ./Calendar-page.component.css */ "./src/app/Calendar-page/Calendar-page.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_2__["LOCALE_ID"])),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"], String])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_2__["LOCALE_ID"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"],
+            ngx_onsenui__WEBPACK_IMPORTED_MODULE_5__["OnsNavigator"], String, _Calendar_Service_web_service__WEBPACK_IMPORTED_MODULE_6__["WebService"]])
     ], CalendarPageComponent);
     return CalendarPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/ChatRoom-page/ChatRoom-page.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/ChatRoom-page/ChatRoom-page.component.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL0NoYXRSb29tLXBhZ2UvQ2hhdFJvb20tcGFnZS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/ChatRoom-page/ChatRoom-page.component.html":
+/*!************************************************************!*\
+  !*** ./src/app/ChatRoom-page/ChatRoom-page.component.html ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ons-toolbar>\r\n  <div class=\"left\"><ons-back-button>Back</ons-back-button></div>\r\n  <div class=\"center\">ChatRoom</div>\r\n</ons-toolbar>\r\n  <div class=\"background\"></div>\r\n  <div class=\"content\" class=\"initial-page\">\r\n    <div style=\"text-align: center; margin: 10px\">\r\n      <p>This is the ChatRoom page.</p>\r\n    </div>\r\n  </div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/ChatRoom-page/ChatRoom-page.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/ChatRoom-page/ChatRoom-page.component.ts ***!
+  \**********************************************************/
+/*! exports provided: ChatRoomPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChatRoomPageComponent", function() { return ChatRoomPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ChatRoomPageComponent = /** @class */ (function () {
+    // tslint:disable-next-line:class-name
+    function ChatRoomPageComponent() {
+    }
+    ChatRoomPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            // tslint:disable-next-line:component-selector
+            selector: 'ons-page[ChatRoomPage]',
+            template: __webpack_require__(/*! ./ChatRoom-page.component.html */ "./src/app/ChatRoom-page/ChatRoom-page.component.html"),
+            styles: [__webpack_require__(/*! ./ChatRoom-page.component.css */ "./src/app/ChatRoom-page/ChatRoom-page.component.css")]
+        })
+        // tslint:disable-next-line:class-name
+    ], ChatRoomPageComponent);
+    return ChatRoomPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/Group-page/Group-page.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/Group-page/Group-page.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".GPBtn {\r\n  margin-top: 150px;\r\n  width: 100%;\r\n  background-color: white;\r\n  border: 1px solid #050c21;\r\n  color: #000000;\r\n  font-size: 20px;\r\n  margin-left: 100px;\r\n  margin-right: 100px;\r\n}\r\n.CSBtn {\r\n  width: 100%;\r\n  background-color: white;\r\n  border: 1px solid #050c21;\r\n  color: #000000;\r\n  font-size: 20px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvR3JvdXAtcGFnZS9Hcm91cC1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxpQkFBaUI7RUFDakIsV0FBVztFQUNYLHVCQUF1QjtFQUN2Qix5QkFBeUI7RUFDekIsY0FBYztFQUNkLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsbUJBQW1CO0FBQ3JCO0FBQ0E7RUFDRSxXQUFXO0VBQ1gsdUJBQXVCO0VBQ3ZCLHlCQUF5QjtFQUN6QixjQUFjO0VBQ2QsZUFBZTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL0dyb3VwLXBhZ2UvR3JvdXAtcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLkdQQnRuIHtcclxuICBtYXJnaW4tdG9wOiAxNTBweDtcclxuICB3aWR0aDogMTAwJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICBib3JkZXI6IDFweCBzb2xpZCAjMDUwYzIxO1xyXG4gIGNvbG9yOiAjMDAwMDAwO1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxuICBtYXJnaW4tbGVmdDogMTAwcHg7XHJcbiAgbWFyZ2luLXJpZ2h0OiAxMDBweDtcclxufVxyXG4uQ1NCdG4ge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICMwNTBjMjE7XHJcbiAgY29sb3I6ICMwMDAwMDA7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG59XHJcbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/Group-page/Group-page.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/Group-page/Group-page.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ons-page>\r\n  <ons-toolbar>\r\n    <div class=\"center\">{{title}}</div>\r\n  </ons-toolbar>\r\n  <div class=\"center\">\r\n    <ons-row>\r\n      <ons-button class=\"GPBtn\" (click)=\"createdialog.show()\">創建群組</ons-button>\r\n    </ons-row>\r\n    <ons-row>\r\n      <ons-button class=\"GPBtn\" (click)=\"searchdialog.show()\">搜尋群組</ons-button>\r\n    </ons-row>\r\n    <ons-row>\r\n    <ons-button class=\"GPBtn\" (click)=\"logout()\">登出</ons-button>\r\n    <p style=\"font-size: 20px;\">目前登入人員：{{loginData.currentUser}}</p>\r\n    </ons-row>\r\n  </div>\r\n  <!-- Dialog for create group -->\r\n  <ons-dialog animation=\"default\" cancelable #createdialog>\r\n    <div class=\"dialog\">\r\n      <div class=\"dialog-container\" style=\"height: 218px;\">\r\n        <ons-page>\r\n          <ons-toolbar>\r\n            <div class=\"center\">Create Group</div>\r\n          </ons-toolbar>\r\n          <div class=\"content\">\r\n            <div style=\"text-align: center\">\r\n              <ons-row>\r\n                <ons-input class=\"input-text\"\r\n                           placeholder=\"群組名稱\"\r\n                           name=\"CGP_Name\"\r\n                           [(ngModel)]=\"CreateGroup.CGP_Name\"\r\n                           float></ons-input>\r\n              </ons-row>\r\n              <ons-row>\r\n                <ons-input class=\"input-text\"\r\n                           placeholder=\"群組ID\"\r\n                           name=\"CGP_ID\"\r\n                           [(ngModel)]=\"CreateGroup.CGP_ID\"\r\n                           float></ons-input>\r\n              </ons-row>\r\n              <ons-row>\r\n                <ons-input class=\"input-text\"\r\n                           placeholder=\"群組密碼\"\r\n                           name=\"CGP_PSW\"\r\n                           [(ngModel)]=\"CreateGroup.CGP_PSW\"\r\n                           float></ons-input>\r\n              </ons-row>\r\n              <ons-row>\r\n                <ons-button class=\"CSBtn\" (click)=\"CreateGP()\">建立</ons-button>\r\n              </ons-row>\r\n            </div>\r\n          </div>\r\n        </ons-page>\r\n      </div>\r\n    </div>\r\n  </ons-dialog>\r\n  <!--Dialog end-->\r\n  <!-- Dialog for search group -->\r\n  <ons-dialog animation=\"default\" cancelable #searchdialog>\r\n    <div class=\"dialog\">\r\n      <div class=\"dialog-container\" style=\"height: 175px;\">\r\n        <ons-page>\r\n          <ons-toolbar>\r\n            <div class=\"center\">Search Group</div>\r\n          </ons-toolbar>\r\n          <div class=\"content\">\r\n            <div style=\"text-align: center\">\r\n              <ons-row>\r\n                <ons-input class=\"input-text\"\r\n                           placeholder=\"群組ID\"\r\n                           name=\"SGP_ID\"\r\n                           [(ngModel)]=\"SearchGroup.SGP_ID\"\r\n                           float></ons-input>\r\n              </ons-row>\r\n              <ons-row>\r\n                <ons-input class=\"input-text\"\r\n                           type = \"password\"\r\n                           placeholder=\"群組密碼\"\r\n                           name=\"SGP_PSW\"\r\n                           [(ngModel)]=\"SearchGroup.SGP_PSW\"\r\n                           float></ons-input>\r\n              </ons-row>\r\n              <ons-row>\r\n                <ons-button class=\"CSBtn\" (click)=\"SearchGP()\">搜尋</ons-button>\r\n              </ons-row>\r\n            </div>\r\n          </div>\r\n        </ons-page>\r\n      </div>\r\n    </div>\r\n  </ons-dialog>\r\n  <!--Dialog end-->\r\n</ons-page>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/Group-page/Group-page.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/Group-page/Group-page.component.ts ***!
+  \****************************************************/
+/*! exports provided: GroupPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupPageComponent", function() { return GroupPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var ngx_onsenui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-onsenui */ "./node_modules/ngx-onsenui/ngx-onsenui.js");
+/* harmony import */ var onsenui__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! onsenui */ "./node_modules/onsenui/js/onsenui.js");
+/* harmony import */ var onsenui__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(onsenui__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Main_page_Main_page_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Main-page/Main-page.component */ "./src/app/Main-page/Main-page.component.ts");
+
+
+
+
+
+var GroupPageComponent = /** @class */ (function () {
+    // tslint:disable-next-line:variable-name
+    function GroupPageComponent(_navigator) {
+        this._navigator = _navigator;
+        this.title = '選擇創建群組或搜尋群組';
+        this.CreateGroup = {
+            CGP_Name: '',
+            CGP_ID: '',
+            CGP_PSW: ''
+        };
+        this.SearchGroup = {
+            SGP_ID: '',
+            SGP_PSW: ''
+        };
+        this.loading = false;
+        this.loginData = {
+            currentUser: {},
+            isLogin: false
+        };
+    }
+    // 登出
+    GroupPageComponent.prototype.logout = function () {
+        var _this = this;
+        this.loginData.currentUser = {};
+        this.loginData.isLogin = false;
+        localStorage.setItem('loginData', JSON.stringify(this.loginData));
+        onsenui__WEBPACK_IMPORTED_MODULE_3__["notification"]
+            .confirm({
+            title: '人員登出',
+            message: '確定要登出嗎？',
+            cancelable: true,
+            callback: function (i) {
+                if (i === 1) {
+                    onsenui__WEBPACK_IMPORTED_MODULE_3__["notification"].alert({ title: '人員登出', message: '登出成功' });
+                    _this.loading = true;
+                    _this._navigator.element.popPage();
+                }
+            }
+        });
+    };
+    GroupPageComponent.prototype.CreateGP = function () {
+        this._navigator.element.pushPage(_Main_page_Main_page_component__WEBPACK_IMPORTED_MODULE_4__["MainPageComponent"], { data: { hoge: 'Create' } });
+    };
+    GroupPageComponent.prototype.SearchGP = function () {
+        this._navigator.element.pushPage(_Main_page_Main_page_component__WEBPACK_IMPORTED_MODULE_4__["MainPageComponent"], { data: { hoge: 'Search' } });
+    };
+    GroupPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            // tslint:disable-next-line:component-selector
+            selector: 'ons-page[GroupPage]',
+            template: __webpack_require__(/*! ./Group-page.component.html */ "./src/app/Group-page/Group-page.component.html"),
+            styles: [__webpack_require__(/*! ./Group-page.component.css */ "./src/app/Group-page/Group-page.component.css")]
+        })
+        // tslint:disable-next-line:class-name
+        ,
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [ngx_onsenui__WEBPACK_IMPORTED_MODULE_2__["OnsNavigator"]])
+    ], GroupPageComponent);
+    return GroupPageComponent;
 }());
 
 
@@ -1020,7 +1306,7 @@ var CalendarPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  padding-right: 10%;\r\n}\r\n.center {\r\n  font-weight: bold;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvTWFpbi1wYWdlL01haW4tcGFnZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixrQkFBa0I7QUFDcEI7QUFDQTtFQUNFLGlCQUFpQjtBQUNuQiIsImZpbGUiOiJzcmMvYXBwL01haW4tcGFnZS9NYWluLXBhZ2UuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIm9ucy1yb3cge1xyXG4gIG1hcmdpbi10b3A6IDIwJTtcclxuICBwYWRkaW5nLWxlZnQ6IDEwJTtcclxuICBwYWRkaW5nLXJpZ2h0OiAxMCU7XHJcbn1cclxuLmNlbnRlciB7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuIl19 */"
+module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  padding-right: 10%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvTWFpbi1wYWdlL01haW4tcGFnZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixrQkFBa0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9NYWluLXBhZ2UvTWFpbi1wYWdlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJvbnMtcm93IHtcclxuICBtYXJnaW4tdG9wOiAyMCU7XHJcbiAgcGFkZGluZy1sZWZ0OiAxMCU7XHJcbiAgcGFkZGluZy1yaWdodDogMTAlO1xyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -1031,7 +1317,7 @@ module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  p
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ons-tabbar>\r\n  <div class=\"tabbar__content\"></div>\r\n  <div class=\"tabbar\">\r\n    <ons-tab label=\"Memeber\" icon=\"ion-home\" [page]=\"memeber\" active></ons-tab>\r\n    <ons-tab label=\"Calendar\" icon=\"ion-ios-browsers\" [page]=\"calendar\"></ons-tab>\r\n  </div>\r\n</ons-tabbar>\r\n"
+module.exports = "<ons-tabbar>\r\n  <div class=\"tabbar__content\"></div>\r\n  <div class=\"tabbar\">\r\n    <ons-tab label=\"Memeber\" icon=\"md-face\" [page]=\"memeber\" active></ons-tab>\r\n    <ons-tab label=\"ChatRoom\" icon=\"md-home\" [page]=\"chatroom\"></ons-tab>\r\n    <ons-tab label=\"Schedule\" icon=\"fa-file\" [page]=\"schedule\"></ons-tab>\r\n    <ons-tab label=\"Calendar\" icon=\"ion-calendar\" [page]=\"calendar\"></ons-tab>\r\n    <ons-tab label=\"Salary\" icon=\"md-zoom-in\" [page]=\"salary\"></ons-tab>\r\n    <ons-tab label=\"Setting\" icon=\"fa-cog\" [page]=\"setting\"></ons-tab>\r\n  </div>\r\n</ons-tabbar>\r\n"
 
 /***/ }),
 
@@ -1050,10 +1336,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_onsenui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-onsenui */ "./node_modules/ngx-onsenui/ngx-onsenui.js");
 /* harmony import */ var _Member_page_Member_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Member-page/Member-page.component */ "./src/app/Member-page/Member-page.component.ts");
 /* harmony import */ var _Calendar_page_Calendar_page_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Calendar-page/Calendar-page.component */ "./src/app/Calendar-page/Calendar-page.component.ts");
+/* harmony import */ var _ChatRoom_page_ChatRoom_page_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ChatRoom-page/ChatRoom-page.component */ "./src/app/ChatRoom-page/ChatRoom-page.component.ts");
+/* harmony import */ var _Salary_page_Salary_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Salary-page/Salary-page.component */ "./src/app/Salary-page/Salary-page.component.ts");
+/* harmony import */ var _Setting_page_Setting_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Setting-page/Setting-page.component */ "./src/app/Setting-page/Setting-page.component.ts");
+/* harmony import */ var _Schedule_page_Schedule_page_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Schedule-page/Schedule-page.component */ "./src/app/Schedule-page/Schedule-page.component.ts");
 
 
 
 // Component
+
+
+
+
 
 
 var MainPageComponent = /** @class */ (function () {
@@ -1062,6 +1356,10 @@ var MainPageComponent = /** @class */ (function () {
         this._navigator = _navigator;
         this.memeber = _Member_page_Member_page_component__WEBPACK_IMPORTED_MODULE_3__["MemberPageComponent"];
         this.calendar = _Calendar_page_Calendar_page_component__WEBPACK_IMPORTED_MODULE_4__["CalendarPageComponent"];
+        this.chatroom = _ChatRoom_page_ChatRoom_page_component__WEBPACK_IMPORTED_MODULE_5__["ChatRoomPageComponent"];
+        this.salary = _Salary_page_Salary_page_component__WEBPACK_IMPORTED_MODULE_6__["SalaryPageComponent"];
+        this.setting = _Setting_page_Setting_page_component__WEBPACK_IMPORTED_MODULE_7__["SettingPageComponent"];
+        this.schedule = _Schedule_page_Schedule_page_component__WEBPACK_IMPORTED_MODULE_8__["SchedulePageComponent"];
     }
     MainPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1088,7 +1386,7 @@ var MainPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  padding-right: 10%;\r\n}\r\n.center {\r\n  font-weight: bold;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvTWVtYmVyLXBhZ2UvTWVtYmVyLXBhZ2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsa0JBQWtCO0FBQ3BCO0FBQ0E7RUFDRSxpQkFBaUI7QUFDbkIiLCJmaWxlIjoic3JjL2FwcC9NZW1iZXItcGFnZS9NZW1iZXItcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsib25zLXJvdyB7XHJcbiAgbWFyZ2luLXRvcDogMjAlO1xyXG4gIHBhZGRpbmctbGVmdDogMTAlO1xyXG4gIHBhZGRpbmctcmlnaHQ6IDEwJTtcclxufVxyXG4uY2VudGVyIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG4iXX0= */"
+module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  padding-right: 10%;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvTWVtYmVyLXBhZ2UvTWVtYmVyLXBhZ2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsa0JBQWtCO0FBQ3BCIiwiZmlsZSI6InNyYy9hcHAvTWVtYmVyLXBhZ2UvTWVtYmVyLXBhZ2UuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIm9ucy1yb3cge1xyXG4gIG1hcmdpbi10b3A6IDIwJTtcclxuICBwYWRkaW5nLWxlZnQ6IDEwJTtcclxuICBwYWRkaW5nLXJpZ2h0OiAxMCU7XHJcbn1cclxuXHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -1099,7 +1397,7 @@ module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  p
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ons-toolbar>\r\n  <div class=\"left\"><ons-back-button>Back</ons-back-button></div>\r\n  <div class=\"center\">Memeber</div>\r\n</ons-toolbar>\r\n<div class=\"background\"></div>\r\n<div class=\"content\" class=\"initial-page\">\r\n  <div style=\"text-align: center; margin: 10px\">\r\n    <p>This is the Memeber page.</p>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<ons-toolbar>\r\n  <div class=\"left\"><ons-back-button>Back</ons-back-button></div>\r\n  <div class=\"center\">Memeber</div>\r\n</ons-toolbar>\r\n<div class=\"background\"></div>\r\n<div class=\"content\" class=\"initial-page\">\r\n  <div style=\"text-align: left; margin: 10px\">\r\n    <p></p>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1149,7 +1447,7 @@ var MemberPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  padding-right: 10%;\r\n}\r\n.center {\r\n  font-weight: bold;\r\n}\r\n.sex {\r\n  padding-left: 20px;\r\n  padding-right: 20px;\r\n  text-align: center;\r\n  font-size: 15px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvUmd0LXBhZ2UvUmd0LXBhZ2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsa0JBQWtCO0FBQ3BCO0FBQ0E7RUFDRSxpQkFBaUI7QUFDbkI7QUFDQTtFQUNFLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLGVBQWU7QUFDakIiLCJmaWxlIjoic3JjL2FwcC9SZ3QtcGFnZS9SZ3QtcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsib25zLXJvdyB7XHJcbiAgbWFyZ2luLXRvcDogMjAlO1xyXG4gIHBhZGRpbmctbGVmdDogMTAlO1xyXG4gIHBhZGRpbmctcmlnaHQ6IDEwJTtcclxufVxyXG4uY2VudGVyIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG4uc2V4IHtcclxuICBwYWRkaW5nLWxlZnQ6IDIwcHg7XHJcbiAgcGFkZGluZy1yaWdodDogMjBweDtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG59XHJcbiJdfQ== */"
+module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  padding-right: 10%;\r\n}\r\n.sex {\r\n  padding-left: 20px;\r\n  padding-right: 20px;\r\n  text-align: center;\r\n  font-size: 15px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvUmd0LXBhZ2UvUmd0LXBhZ2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsa0JBQWtCO0FBQ3BCO0FBQ0E7RUFDRSxrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLGtCQUFrQjtFQUNsQixlQUFlO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvUmd0LXBhZ2UvUmd0LXBhZ2UuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIm9ucy1yb3cge1xyXG4gIG1hcmdpbi10b3A6IDIwJTtcclxuICBwYWRkaW5nLWxlZnQ6IDEwJTtcclxuICBwYWRkaW5nLXJpZ2h0OiAxMCU7XHJcbn1cclxuLnNleCB7XHJcbiAgcGFkZGluZy1sZWZ0OiAyMHB4O1xyXG4gIHBhZGRpbmctcmlnaHQ6IDIwcHg7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIGZvbnQtc2l6ZTogMTVweDtcclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -1160,7 +1458,7 @@ module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  p
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ons-page  [formGroup]=\"RgtPageForm\">\r\n  <ons-toolbar>\r\n    <div class=\"center\">{{title}}</div>\r\n    <div class=\"left\"><ons-back-button>Back</ons-back-button></div>\r\n  </ons-toolbar>\r\n  <div class=\"center\">\r\n    <ons-row>\r\n      <ons-input class=\"input-text\"\r\n                 placeholder=\"使用者名稱\"\r\n                 name=\"USER_Name\"\r\n                 formControlName=\"USER_Name\"\r\n                 float></ons-input>\r\n    </ons-row>\r\n    <ons-row>\r\n      <ons-input class=\"input-text\"\r\n                 placeholder=\"身份證字號\"\r\n                 name=\"USER_ID\"\r\n                 formControlName=\"USER_ID\"\r\n                 float></ons-input>\r\n    </ons-row>\r\n    <ons-row>\r\n        <div *ngFor=\"let s of sex; let i = index\">\r\n          <ons-radio\r\n            name=\"USER_SEX\"\r\n            [attr.input-id]=\"'sex-' + i\"\r\n            formControlName=\"USER_SEX\"\r\n            [attr.value]=\"s\"\r\n          >\r\n          </ons-radio>\r\n          <label class=\"sex\" [attr.for]=\"'sex-' + i\">{{ s }}</label>\r\n        </div>\r\n    </ons-row>\r\n    <ons-row>\r\n      <ons-input class=\"input-text\"\r\n                 type=\"password\"\r\n                 placeholder=\"密碼\"\r\n                 name=\"USER_PSW\"\r\n                 formControlName=\"USER_PSW\"\r\n                 float></ons-input>\r\n    </ons-row>\r\n  </div>\r\n  <ons-row>\r\n    <ons-button class=\"pageBtn\">註冊</ons-button>\r\n  </ons-row>\r\n</ons-page>\r\n\r\n"
+module.exports = "<ons-page>\r\n    <ons-toolbar>\r\n      <div class=\"center\">{{title}}</div>\r\n      <div class=\"left\"><ons-back-button>Back</ons-back-button></div>\r\n    </ons-toolbar>\r\n    <div class=\"center\">\r\n        <ons-row>\r\n          <ons-input class=\"input-text\"\r\n                     placeholder=\"使用者名稱\"\r\n                     modifier=\"underbar\"\r\n                     name=\"USER_Name\"\r\n                     [(ngModel)]=\"RgtData.USER_Name\"\r\n                     float></ons-input>\r\n        </ons-row>\r\n        <ons-row>\r\n          <ons-input class=\"input-text\"\r\n                     placeholder=\"身份證字號\"\r\n                     modifier=\"underbar\"\r\n                     name=\"USER_ID\"\r\n                     [(ngModel)]=\"RgtData.USER_ID\"\r\n                     float></ons-input>\r\n        </ons-row>\r\n        <ons-row>\r\n            <div *ngFor=\"let s of sex; let i = index\">\r\n              <ons-radio\r\n                name=\"USER_SEX\"\r\n                modifier=\"underbar\"\r\n                [attr.input-id]=\"'sex-' + i\"\r\n                [(ngModel)]=\"RgtData.USER_SEX\"\r\n                [attr.value]=\"s\"\r\n              >\r\n              </ons-radio>\r\n              <label class=\"sex\" [attr.for]=\"'sex-' + i\">{{ s }}</label>\r\n            </div>\r\n        </ons-row>\r\n        <ons-row>\r\n          <ons-input class=\"input-text\"\r\n                     type=\"password\"\r\n                     placeholder=\"密碼\"\r\n                     modifier=\"underbar\"\r\n                     name=\"USER_PSW\"\r\n                     [(ngModel)]=\"RgtData.USER_PSW\"\r\n                     float></ons-input>\r\n        </ons-row>\r\n    </div>\r\n    <ons-row>\r\n      <ons-button class=\"pageBtn\" (click)=\"RgtUP()\">註冊</ons-button>\r\n    </ons-row>\r\n</ons-page>\r\n\r\n"
 
 /***/ }),
 
@@ -1177,7 +1475,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var ngx_onsenui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-onsenui */ "./node_modules/ngx-onsenui/ngx-onsenui.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var onsenui__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! onsenui */ "./node_modules/onsenui/js/onsenui.js");
+/* harmony import */ var onsenui__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(onsenui__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -1189,15 +1488,25 @@ var RgtPageComponent = /** @class */ (function () {
         this._params = _params;
         this.title = '註冊';
         this.sex = ['男', '女'];
+        this.RgtData = {
+            USER_Name: '',
+            USER_ID: '',
+            USER_SEX: '',
+            USER_PSW: ''
+        };
         console.log('parameters:', _params.data);
-        this.RgtPageForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
-            USER_Name: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
-            USER_ID: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
-            USER_BD: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
-            USER_SEX: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
-            USER_PSW: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('')
-        });
     }
+    RgtPageComponent.prototype.ngOnInit = function () {
+    };
+    RgtPageComponent.prototype.RgtUP = function () {
+        console.log(this.RgtData);
+        onsenui__WEBPACK_IMPORTED_MODULE_3__["notification"].alert({
+            title: '人員註冊',
+            message: '註冊成功',
+            buttonLabel: '確定'
+        })
+            .then(this._navigator.element.popPage());
+    };
     RgtPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             // tslint:disable-next-line:component-selector
@@ -1208,6 +1517,276 @@ var RgtPageComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [ngx_onsenui__WEBPACK_IMPORTED_MODULE_2__["OnsNavigator"], ngx_onsenui__WEBPACK_IMPORTED_MODULE_2__["Params"]])
     ], RgtPageComponent);
     return RgtPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/Salary-page/Salary-page.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/Salary-page/Salary-page.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL1NhbGFyeS1wYWdlL1NhbGFyeS1wYWdlLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/Salary-page/Salary-page.component.html":
+/*!********************************************************!*\
+  !*** ./src/app/Salary-page/Salary-page.component.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ons-toolbar>\r\n  <div class=\"left\"><ons-back-button>Back</ons-back-button></div>\r\n  <div class=\"center\">Salary</div>\r\n</ons-toolbar>\r\n  <div class=\"background\"></div>\r\n  <div class=\"content\" class=\"initial-page\">\r\n    <div style=\"text-align: center; margin: 10px\">\r\n      <p>This is the Salary page.</p>\r\n    </div>\r\n  </div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/Salary-page/Salary-page.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/Salary-page/Salary-page.component.ts ***!
+  \******************************************************/
+/*! exports provided: SalaryPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SalaryPageComponent", function() { return SalaryPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var SalaryPageComponent = /** @class */ (function () {
+    // tslint:disable-next-line:class-name
+    function SalaryPageComponent() {
+    }
+    SalaryPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            // tslint:disable-next-line:component-selector
+            selector: 'ons-page[SalaryPage]',
+            template: __webpack_require__(/*! ./Salary-page.component.html */ "./src/app/Salary-page/Salary-page.component.html"),
+            styles: [__webpack_require__(/*! ./Salary-page.component.css */ "./src/app/Salary-page/Salary-page.component.css")]
+        })
+        // tslint:disable-next-line:class-name
+    ], SalaryPageComponent);
+    return SalaryPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/Schedule-page/Schedule-page.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/Schedule-page/Schedule-page.component.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".searchBtn {\r\n  padding: 10px;\r\n  font-size: 15px;\r\n  background-color: white;\r\n  border:1px solid #050c21;\r\n  color:#000000;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvU2NoZWR1bGUtcGFnZS9TY2hlZHVsZS1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFhO0VBQ2IsZUFBZTtFQUNmLHVCQUF1QjtFQUN2Qix3QkFBd0I7RUFDeEIsYUFBYTtBQUNmIiwiZmlsZSI6InNyYy9hcHAvU2NoZWR1bGUtcGFnZS9TY2hlZHVsZS1wYWdlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc2VhcmNoQnRuIHtcclxuICBwYWRkaW5nOiAxMHB4O1xyXG4gIGZvbnQtc2l6ZTogMTVweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICBib3JkZXI6MXB4IHNvbGlkICMwNTBjMjE7XHJcbiAgY29sb3I6IzAwMDAwMDtcclxufVxyXG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/Schedule-page/Schedule-page.component.html":
+/*!************************************************************!*\
+  !*** ./src/app/Schedule-page/Schedule-page.component.html ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ons-toolbar>\r\n    <div class=\"left\"><ons-back-button>Back</ons-back-button></div>\r\n    <div class=\"center\">Schedule</div>\r\n  </ons-toolbar>\r\n  <div class=\"background\"></div>\r\n  <ion-header>\r\n    <ion-toolbar color=\"Medium\">\r\n      <ion-title class=\"center\" >\r\n        {{ viewTitle }}\r\n      </ion-title>\r\n      <ion-buttons slot=\"end\">\r\n        <button class=\"searchBtn\" ion-button (click)=\"Layout()\">\r\n          <ion-icon name=\"search\"></ion-icon>\r\n          安排人力\r\n        </button>\r\n      </ion-buttons>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  <ion-content>\r\n    <calendar\r\n      [eventSource]=\"eventSource\"\r\n      [calendarMode]=\"calendar.mode\"\r\n      [currentDate]=\"calendar.currentDate\"\r\n      (onEventSelected)=\"onEventSelected($event)\"\r\n      (onTitleChanged)=\"onViewTitleChanged($event)\"\r\n      (onTimeSelected)=\"onTimeSelected($event)\"\r\n      startHour=\"5\"\r\n      endHour=\"26\"\r\n      step=\"20\"\r\n      startingDayWeek=\"1\">\r\n    </calendar>\r\n  </ion-content>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/Schedule-page/Schedule-page.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/Schedule-page/Schedule-page.component.ts ***!
+  \**********************************************************/
+/*! exports provided: SchedulePageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SchedulePageComponent", function() { return SchedulePageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var ngx_onsenui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-onsenui */ "./node_modules/ngx-onsenui/ngx-onsenui.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var ionic2_calendar_calendar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ionic2-calendar/calendar */ "./node_modules/ionic2-calendar/calendar.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _Calendar_Service_web_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Calendar-Service/web.service */ "./src/app/Calendar-Service/web.service.ts");
+
+
+
+
+
+
+
+var SchedulePageComponent = /** @class */ (function () {
+    function SchedulePageComponent(alertCtrl, navCtrl, 
+    // tslint:disable-next-line:variable-name
+    _navigator, locale, calendarService) {
+        this.alertCtrl = alertCtrl;
+        this.navCtrl = navCtrl;
+        this._navigator = _navigator;
+        this.locale = locale;
+        this.calendarService = calendarService;
+        this.event = {
+            title: '',
+            desc: '',
+            startTime: '',
+            endTime: '',
+        };
+        this.eventSource = [];
+        this.calendar = {
+            mode: 'week',
+            currentDate: new Date(),
+        };
+    }
+    SchedulePageComponent.prototype.ngOnInit = function () {
+        this.resetEvent();
+    };
+    SchedulePageComponent.prototype.resetEvent = function () {
+        this.event = {
+            title: '',
+            desc: '',
+            startTime: new Date().toISOString(),
+            endTime: new Date().toISOString(),
+        };
+    };
+    SchedulePageComponent.prototype.Layout = function () { };
+    // Change current month/week/day
+    SchedulePageComponent.prototype.next = function () {
+        // tslint:disable-next-line:no-string-literal
+        var swiper = document.querySelector('.swiper-container')['swiper'];
+        swiper.slideNext();
+    };
+    SchedulePageComponent.prototype.back = function () {
+        // tslint:disable-next-line:no-string-literal
+        var swiper = document.querySelector('.swiper-container')['swiper'];
+        swiper.slidePrev();
+    };
+    // Change between month/week/day
+    SchedulePageComponent.prototype.changeMode = function (mode) {
+        this.calendar.mode = mode;
+    };
+    // // Focus today
+    // today() {
+    //   this.calendar.currentDate = new Date();
+    // }
+    // Selected date reange and hence title changed
+    SchedulePageComponent.prototype.onViewTitleChanged = function (title) {
+        this.viewTitle = title;
+    };
+    // Calendar event was clicked
+    SchedulePageComponent.prototype.onEventSelected = function (event) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var start, end, alert;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        start = Object(_angular_common__WEBPACK_IMPORTED_MODULE_3__["formatDate"])(event.startTime, 'yyyy/MM/dd HH:mm', this.locale);
+                        end = Object(_angular_common__WEBPACK_IMPORTED_MODULE_3__["formatDate"])(event.endTime, 'yyyy/MM/dd HH:mm', this.locale);
+                        return [4 /*yield*/, this.alertCtrl.create({
+                                header: event.title,
+                                subHeader: event.location,
+                                message: start + '-' + end,
+                                buttons: ['OK']
+                            })];
+                    case 1:
+                        alert = _a.sent();
+                        alert.present();
+                        console.log('11');
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    // Time slot was clicked
+    SchedulePageComponent.prototype.onTimeSelected = function (ev) {
+        var selected = new Date(ev.selectedTime);
+        this.event.startTime = selected.toISOString();
+        selected.setHours(selected.getHours() + 1);
+        this.event.endTime = (selected.toISOString());
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(ionic2_calendar_calendar__WEBPACK_IMPORTED_MODULE_4__["CalendarComponent"]),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", ionic2_calendar_calendar__WEBPACK_IMPORTED_MODULE_4__["CalendarComponent"])
+    ], SchedulePageComponent.prototype, "myCal", void 0);
+    SchedulePageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            // tslint:disable-next-line:component-selector
+            selector: 'ons-page[SchedulePage]',
+            template: __webpack_require__(/*! ./Schedule-page.component.html */ "./src/app/Schedule-page/Schedule-page.component.html"),
+            styles: [__webpack_require__(/*! ./Schedule-page.component.css */ "./src/app/Schedule-page/Schedule-page.component.css")]
+        })
+        // tslint:disable-next-line:class-name
+        ,
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_1__["LOCALE_ID"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"],
+            ngx_onsenui__WEBPACK_IMPORTED_MODULE_2__["OnsNavigator"], String, _Calendar_Service_web_service__WEBPACK_IMPORTED_MODULE_6__["WebService"]])
+    ], SchedulePageComponent);
+    return SchedulePageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/Setting-page/Setting-page.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/Setting-page/Setting-page.component.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL1NldHRpbmctcGFnZS9TZXR0aW5nLXBhZ2UuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/Setting-page/Setting-page.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/Setting-page/Setting-page.component.html ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ons-toolbar>\r\n  <div class=\"left\"><ons-back-button>Back</ons-back-button></div>\r\n  <div class=\"center\">Setting</div>\r\n</ons-toolbar>\r\n  <div class=\"background\"></div>\r\n  <div class=\"content\" class=\"initial-page\">\r\n    <div style=\"text-align: center; margin: 10px\">\r\n      <p>This is the Setting page.</p>\r\n    </div>\r\n  </div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/Setting-page/Setting-page.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/Setting-page/Setting-page.component.ts ***!
+  \********************************************************/
+/*! exports provided: SettingPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingPageComponent", function() { return SettingPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var SettingPageComponent = /** @class */ (function () {
+    // tslint:disable-next-line:class-name
+    function SettingPageComponent() {
+    }
+    SettingPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            // tslint:disable-next-line:component-selector
+            selector: 'ons-page[SettingPage]',
+            template: __webpack_require__(/*! ./Setting-page.component.html */ "./src/app/Setting-page/Setting-page.component.html"),
+            styles: [__webpack_require__(/*! ./Setting-page.component.css */ "./src/app/Setting-page/Setting-page.component.css")]
+        })
+        // tslint:disable-next-line:class-name
+    ], SettingPageComponent);
+    return SettingPageComponent;
 }());
 
 
@@ -1265,7 +1844,7 @@ module.exports = "\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ons-navigator swipeable [page]=\"page\"></ons-navigator>\n"
+module.exports = "<ons-navigator swipeable [page]=\"page\"></ons-navigator>\r\n"
 
 /***/ }),
 
@@ -1316,19 +1895,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var ngx_onsenui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-onsenui */ "./node_modules/ngx-onsenui/ngx-onsenui.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var ionic2_calendar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ionic2-calendar */ "./node_modules/ionic2-calendar/index.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _node_modules_angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../node_modules/@angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _Rgt_page_Rgt_page_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Rgt-page/Rgt-page.component */ "./src/app/Rgt-page/Rgt-page.component.ts");
-/* harmony import */ var _logIn_page_logIn_page_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./logIn-page/logIn-page.component */ "./src/app/logIn-page/logIn-page.component.ts");
-/* harmony import */ var _Main_page_Main_page_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Main-page/Main-page.component */ "./src/app/Main-page/Main-page.component.ts");
-/* harmony import */ var _Member_page_Member_page_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Member-page/Member-page.component */ "./src/app/Member-page/Member-page.component.ts");
-/* harmony import */ var _Calendar_page_Calendar_page_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Calendar-page/Calendar-page.component */ "./src/app/Calendar-page/Calendar-page.component.ts");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _node_modules_angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../node_modules/@angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
+/* harmony import */ var ionic2_calendar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ionic2-calendar */ "./node_modules/ionic2-calendar/index.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _Calendar_Service_web_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Calendar-Service/web.service */ "./src/app/Calendar-Service/web.service.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _logIn_page_logIn_page_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./logIn-page/logIn-page.component */ "./src/app/logIn-page/logIn-page.component.ts");
+/* harmony import */ var _Rgt_page_Rgt_page_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Rgt-page/Rgt-page.component */ "./src/app/Rgt-page/Rgt-page.component.ts");
+/* harmony import */ var _Main_page_Main_page_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Main-page/Main-page.component */ "./src/app/Main-page/Main-page.component.ts");
+/* harmony import */ var _Member_page_Member_page_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Member-page/Member-page.component */ "./src/app/Member-page/Member-page.component.ts");
+/* harmony import */ var _Calendar_page_Calendar_page_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Calendar-page/Calendar-page.component */ "./src/app/Calendar-page/Calendar-page.component.ts");
+/* harmony import */ var _ChatRoom_page_ChatRoom_page_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./ChatRoom-page/ChatRoom-page.component */ "./src/app/ChatRoom-page/ChatRoom-page.component.ts");
+/* harmony import */ var _Salary_page_Salary_page_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./Salary-page/Salary-page.component */ "./src/app/Salary-page/Salary-page.component.ts");
+/* harmony import */ var _Setting_page_Setting_page_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./Setting-page/Setting-page.component */ "./src/app/Setting-page/Setting-page.component.ts");
+/* harmony import */ var _Group_page_Group_page_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./Group-page/Group-page.component */ "./src/app/Group-page/Group-page.component.ts");
+/* harmony import */ var _Schedule_page_Schedule_page_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./Schedule-page/Schedule-page.component */ "./src/app/Schedule-page/Schedule-page.component.ts");
 
 
 
@@ -1336,6 +1922,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+// Service
 
 
 // Component
@@ -1345,33 +1934,52 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+// Dialog Component
+// import { AddEventDialogComponent } from './Calendar-page/AddEventdialog-page/AddEventdialog-page.component';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"], _Rgt_page_Rgt_page_component__WEBPACK_IMPORTED_MODULE_10__["RgtPageComponent"], _logIn_page_logIn_page_component__WEBPACK_IMPORTED_MODULE_11__["logInPageComponent"], _Main_page_Main_page_component__WEBPACK_IMPORTED_MODULE_12__["MainPageComponent"], _Member_page_Member_page_component__WEBPACK_IMPORTED_MODULE_13__["MemberPageComponent"],
-                _Calendar_page_Calendar_page_component__WEBPACK_IMPORTED_MODULE_14__["CalendarPageComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"], _logIn_page_logIn_page_component__WEBPACK_IMPORTED_MODULE_12__["logInPageComponent"], _Rgt_page_Rgt_page_component__WEBPACK_IMPORTED_MODULE_13__["RgtPageComponent"], _Main_page_Main_page_component__WEBPACK_IMPORTED_MODULE_14__["MainPageComponent"], _Member_page_Member_page_component__WEBPACK_IMPORTED_MODULE_15__["MemberPageComponent"],
+                _Calendar_page_Calendar_page_component__WEBPACK_IMPORTED_MODULE_16__["CalendarPageComponent"], _ChatRoom_page_ChatRoom_page_component__WEBPACK_IMPORTED_MODULE_17__["ChatRoomPageComponent"], _Salary_page_Salary_page_component__WEBPACK_IMPORTED_MODULE_18__["SalaryPageComponent"], _Setting_page_Setting_page_component__WEBPACK_IMPORTED_MODULE_19__["SettingPageComponent"],
+                _Group_page_Group_page_component__WEBPACK_IMPORTED_MODULE_20__["GroupPageComponent"], _Schedule_page_Schedule_page_component__WEBPACK_IMPORTED_MODULE_21__["SchedulePageComponent"]
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
-                _node_modules_angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_10__["AppRoutingModule"],
+                _node_modules_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
                 ngx_onsenui__WEBPACK_IMPORTED_MODULE_1__["OnsenModule"],
-                _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicModule"],
-                ionic2_calendar__WEBPACK_IMPORTED_MODULE_3__["NgCalendarModule"]
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["IonicModule"],
+                ionic2_calendar__WEBPACK_IMPORTED_MODULE_7__["NgCalendarModule"]
             ],
-            entryComponents: [_Rgt_page_Rgt_page_component__WEBPACK_IMPORTED_MODULE_10__["RgtPageComponent"], _logIn_page_logIn_page_component__WEBPACK_IMPORTED_MODULE_11__["logInPageComponent"], _Main_page_Main_page_component__WEBPACK_IMPORTED_MODULE_12__["MainPageComponent"], _Member_page_Member_page_component__WEBPACK_IMPORTED_MODULE_13__["MemberPageComponent"], _Calendar_page_Calendar_page_component__WEBPACK_IMPORTED_MODULE_14__["CalendarPageComponent"]],
-            providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]],
-            schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_6__["CUSTOM_ELEMENTS_SCHEMA"]]
+            entryComponents: [_logIn_page_logIn_page_component__WEBPACK_IMPORTED_MODULE_12__["logInPageComponent"],
+                _Rgt_page_Rgt_page_component__WEBPACK_IMPORTED_MODULE_13__["RgtPageComponent"],
+                _Main_page_Main_page_component__WEBPACK_IMPORTED_MODULE_14__["MainPageComponent"],
+                _Member_page_Member_page_component__WEBPACK_IMPORTED_MODULE_15__["MemberPageComponent"],
+                _Calendar_page_Calendar_page_component__WEBPACK_IMPORTED_MODULE_16__["CalendarPageComponent"],
+                _ChatRoom_page_ChatRoom_page_component__WEBPACK_IMPORTED_MODULE_17__["ChatRoomPageComponent"],
+                _Salary_page_Salary_page_component__WEBPACK_IMPORTED_MODULE_18__["SalaryPageComponent"],
+                _Setting_page_Setting_page_component__WEBPACK_IMPORTED_MODULE_19__["SettingPageComponent"],
+                _Group_page_Group_page_component__WEBPACK_IMPORTED_MODULE_20__["GroupPageComponent"],
+                _Schedule_page_Schedule_page_component__WEBPACK_IMPORTED_MODULE_21__["SchedulePageComponent"]],
+            providers: [_Calendar_Service_web_service__WEBPACK_IMPORTED_MODULE_9__["WebService"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"]],
+            schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["CUSTOM_ELEMENTS_SCHEMA"]]
         })
     ], AppModule);
     return AppModule;
 }());
 
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_7__["platformBrowserDynamic"])().bootstrapModule(AppModule);
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_6__["platformBrowserDynamic"])().bootstrapModule(AppModule);
 
 
 /***/ }),
@@ -1383,7 +1991,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_7__["platformB
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  padding-right: 10%;\r\n}\r\n.center {\r\n  font-weight: bold;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9nSW4tcGFnZS9sb2dJbi1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGtCQUFrQjtBQUNwQjtBQUNBO0VBQ0UsaUJBQWlCO0FBQ25CIiwiZmlsZSI6InNyYy9hcHAvbG9nSW4tcGFnZS9sb2dJbi1wYWdlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJvbnMtcm93IHtcclxuICBtYXJnaW4tdG9wOiAyMCU7XHJcbiAgcGFkZGluZy1sZWZ0OiAxMCU7XHJcbiAgcGFkZGluZy1yaWdodDogMTAlO1xyXG59XHJcbi5jZW50ZXIge1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcbiJdfQ== */"
+module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  padding-right: 10%;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9nSW4tcGFnZS9sb2dJbi1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLGtCQUFrQjtBQUNwQiIsImZpbGUiOiJzcmMvYXBwL2xvZ0luLXBhZ2UvbG9nSW4tcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsib25zLXJvdyB7XHJcbiAgbWFyZ2luLXRvcDogMjAlO1xyXG4gIHBhZGRpbmctbGVmdDogMTAlO1xyXG4gIHBhZGRpbmctcmlnaHQ6IDEwJTtcclxufVxyXG5cclxuIl19 */"
 
 /***/ }),
 
@@ -1394,7 +2002,7 @@ module.exports = "ons-row {\r\n  margin-top: 20%;\r\n  padding-left: 10%;\r\n  p
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ons-page>\r\n  <ons-toolbar>\r\n    <div class=\"center\">{{title}}</div>\r\n  </ons-toolbar>\r\n  <div class=\"center\">\r\n    <ons-row>\r\n      <ons-input class=\"input-text\"\r\n                 placeholder=\"帳號\"\r\n                 name=\"USER_ID\"\r\n                 [(ngModel)]=\"login.USER_ID\"\r\n                 float></ons-input>\r\n    </ons-row>\r\n    <ons-row>\r\n      <ons-input class=\"input-text\"\r\n                 type=\"password\"\r\n                 placeholder=\"密碼\"\r\n                 name=\"USER_PSW\"\r\n                 [(ngModel)]=\"login.USER_PSW\"\r\n                 float></ons-input>\r\n    </ons-row>\r\n    <ons-row>\r\n      <ons-button class=\"pageBtn\" (click)=\"loginOp(navi)\">登入</ons-button>\r\n    </ons-row>\r\n    <ons-row>\r\n      <ons-button class=\"pageBtn\" (click)=\"RgtOp(navi)\">註冊</ons-button>\r\n    </ons-row>\r\n  </div>\r\n</ons-page>\r\n"
+module.exports = "<ons-page>\r\n  <ons-toolbar>\r\n    <div class=\"center\">{{title}}</div>\r\n  </ons-toolbar>\r\n  <ons-progress-bar indeterminate *ngIf=\"loading\"></ons-progress-bar>\r\n  <div class=\"center\" *ngIf=\"!loginData.isLogin\">\r\n    <ons-row>\r\n      <ons-input class=\"input-text\"\r\n                 placeholder=\"帳號\"\r\n                 name=\"USER_ID\"\r\n                 [(ngModel)]=\"login.USER_ID\"\r\n                 float></ons-input>\r\n    </ons-row>\r\n    <ons-row>\r\n      <ons-input class=\"input-text\"\r\n                 type=\"password\"\r\n                 placeholder=\"密碼\"\r\n                 name=\"USER_PSW\"\r\n                 [(ngModel)]=\"login.USER_PSW\"\r\n                 float></ons-input>\r\n    </ons-row>\r\n    <ons-row>\r\n      <ons-button class=\"pageBtn\" (click)=\"loginOp()\">登入</ons-button>\r\n    </ons-row>\r\n    <ons-row>\r\n      <ons-button class=\"pageBtn\" (click)=\"RgtOp()\">註冊</ons-button>\r\n    </ons-row>\r\n  </div>\r\n</ons-page>\r\n"
 
 /***/ }),
 
@@ -1412,7 +2020,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var ngx_onsenui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-onsenui */ "./node_modules/ngx-onsenui/ngx-onsenui.js");
 /* harmony import */ var _Rgt_page_Rgt_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Rgt-page/Rgt-page.component */ "./src/app/Rgt-page/Rgt-page.component.ts");
-/* harmony import */ var _Main_page_Main_page_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Main-page/Main-page.component */ "./src/app/Main-page/Main-page.component.ts");
+/* harmony import */ var _Group_page_Group_page_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Group-page/Group-page.component */ "./src/app/Group-page/Group-page.component.ts");
+/* harmony import */ var onsenui__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! onsenui */ "./node_modules/onsenui/js/onsenui.js");
+/* harmony import */ var onsenui__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(onsenui__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -1429,18 +2040,37 @@ var logInPageComponent = /** @class */ (function () {
             USER_ID: '',
             USER_PSW: ''
         };
+        this.datazzz = this.login.USER_ID;
+        this.loading = false;
+        this.loginData = {
+            currentUser: {},
+            isLogin: false
+        };
     }
+    logInPageComponent.prototype.ngOnInit = function () {
+        if (localStorage.getItem('loginData')) {
+            this.loginData = JSON.parse(localStorage.getItem('loginData'));
+        }
+        else {
+            this.loginData.currentUser = {};
+            this.loginData.isLogin = false;
+            localStorage.setItem('loginData', JSON.stringify(this.loginData));
+        }
+    };
     // 登入
     logInPageComponent.prototype.loginOp = function () {
-        // if (this.login.USER_ID.length === 0 || this.login.USER_PSW.length === 0) {
-        //   ons.notification.alert({
-        //     title: '警告',
-        //     message: '請輸入帳號密碼！',
-        //     buttonLabel: '確定'
-        //   });
-        // } else {
-        this._navigator.element.pushPage(_Main_page_Main_page_component__WEBPACK_IMPORTED_MODULE_4__["MainPageComponent"], { data: { hoge: 'main' } });
-        // }
+        if (this.login.USER_ID.length === 0 || this.login.USER_PSW.length === 0) {
+            onsenui__WEBPACK_IMPORTED_MODULE_5__["notification"].alert({
+                title: '警告',
+                message: '請輸入帳號密碼！',
+                buttonLabel: '確定'
+            });
+        }
+        else {
+            this.loading = true;
+            this._navigator.element.pushPage(_Group_page_Group_page_component__WEBPACK_IMPORTED_MODULE_4__["GroupPageComponent"], { data: { hoge: 'GP' } });
+            console.log(this.login);
+        }
     };
     // 註冊
     logInPageComponent.prototype.RgtOp = function () {

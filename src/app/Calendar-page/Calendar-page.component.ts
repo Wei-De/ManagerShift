@@ -1,6 +1,6 @@
 import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
-import { AlertController, NavController, ModalController } from '@ionic/angular';
+import { AlertController, NavController, ModalController, Events } from '@ionic/angular';
 import { formatDate } from '@angular/common';
 import { OnsNavigator, Params } from 'ngx-onsenui';
 import {
@@ -29,15 +29,16 @@ export class CalendarPageComponent implements OnInit {
     // allDay: false
   };
 
+  isToday: boolean;
   minDate = new Date().toISOString();
 
   eventSource = [];
-  viewTitle;
+  viewTitle: any;
   selectedDay = new Date();
 
   calendar = {
     mode: 'month',
-    currentDate: new Date(),
+    currentDate: new Date()
   };
 
   @ViewChild(CalendarComponent) myCal: CalendarComponent;
@@ -80,24 +81,23 @@ export class CalendarPageComponent implements OnInit {
     // });
 
       // get event
-    // this.calendarService.GetEvent().subscribe(res2 => {
-    //   const getholidays = [];
-    //   getholidays.push(res2.items);
-    //   for (let i = 0; i < 74; i++) {
-    //     const TWholiday = {
-    //       title: getholidays[0][i].summary,
-    //       startTime: new Date(getholidays[0][i].start.date),
-    //       endTime: new Date(getholidays[0][i].end.date)
-    //     };
-    //     const start = TWholiday.startTime;
-    //     const end = TWholiday.endTime;
-    //     TWholiday.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
-    //     TWholiday.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() - 1));
-    //     this.eventSource.push(TWholiday);
-    //     console.log(TWholiday.startTime);
-    //   }
-    //   this.myCal.loadEvents();
-    // });
+    this.calendarService.GetEvent().subscribe(res2 => {
+      const getholidays = [];
+      getholidays.push(res2.items);
+      for (let i = 0; i < 74; i++) {
+        const TWholiday = {
+          title: getholidays[0][i].summary,
+          startTime: new Date(getholidays[0][i].start.date),
+          endTime: new Date(getholidays[0][i].end.date)
+        };
+        const start = TWholiday.startTime;
+        const end = TWholiday.endTime;
+        TWholiday.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
+        TWholiday.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() - 1));
+        this.eventSource.push(TWholiday);
+      }
+      this.myCal.loadEvents();
+    });
   }
 
   resetEvent() {
@@ -112,7 +112,7 @@ export class CalendarPageComponent implements OnInit {
   // show new dialog
   addEventDialog() {
     // tslint:disable-next-line:no-angle-bracket-type-assertion
-    // const dialog = (<HTMLElement> document.getElementById('dialogevent'));
+    const dialog = (<HTMLElement> document.getElementById('dialogevent'));
     // dialog.show();
   }
 
@@ -146,7 +146,7 @@ export class CalendarPageComponent implements OnInit {
   }
 
   // Change between month/week/day
-  changeMode(mode) {
+  changeMode(mode: string) {
     this.calendar.mode = mode;
   }
 
@@ -156,17 +156,12 @@ export class CalendarPageComponent implements OnInit {
   // }
 
   // Selected date reange and hence title changed
-  onViewTitleChanged(title) {
+  onViewTitleChanged(title: any) {
     this.viewTitle = title;
   }
 
-  onEditData(input, index) {
-    this.eventSource[index] = input;
-    this.eventSource = [...this.eventSource];
-  }
-
   // Calendar event was clicked(編輯事件)
-  async onEventSelected(event) {
+  async onEventSelected(event: { startTime: string | number | Date; endTime: string | number | Date; title: string; location: string; }) {
     // tslint:disable-next-line:no-angle-bracket-type-assertion
     // const dialog = (<HTMLElement> document.getElementById('dialog'));
     // dialog.show();
@@ -201,19 +196,15 @@ export class CalendarPageComponent implements OnInit {
   }
 
   // Time slot was clicked
-  onTimeSelected(ev) {
-    // const selected = new Date(ev.selectedTime);
-    // this.event.startTime = selected.toISOString();
-    // selected.setHours(selected.getHours() + 1);
-    // this.event.endTime = (selected.toISOString());
-    // if (this.calendar.mode === 'week') {
-      // 叫出Dialog
-      // const selected = new Date(ev.selectedTime);
-      // 新增事件 this.event.startTime = selected.toISOString();
-    // }
+  onTimeSelected(ev: { selectedTime: string | number | Date; }) {
+    const selected = new Date(ev.selectedTime);
+    this.event.startTime = selected.toISOString();
+    selected.setHours(selected.getHours() + 1);
+    this.event.endTime = (selected.toISOString());
+
     // tslint:disable-next-line:no-angle-bracket-type-assertion
-    const dialog = (<HTMLElement> document.getElementById('dialogevent'));
+    // const dialog = (<HTMLElement> document.getElementById('dialog'));
     // dialog.show();
-    console.log(ev);
+    // console.log(selected);
   }
 }
