@@ -23,7 +23,7 @@
         <div class="dialog-container" style="height: 350px;">
           <ons-page>
             <ons-toolbar>
-              <div class="center">New Event</div>
+              <div class="center">新事件</div>
             </ons-toolbar>
             <div class="content">
               <div style="text-align: center">
@@ -40,7 +40,18 @@
                 <ion-item>
                   <ion-label>End</ion-label>
                   <ion-datetime displayFormat="YYYY/MM/DD HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+                </ion-item>                
+                 
+                
+                <ion-item >
+                   <ion-label>選擇鬧鈴時間</ion-label>
+                   <ion-datetime displayFormat="H:mm" pickerFormat="h mm A" [(ngModel)]="remind.alarmTime"></ion-datetime>
                 </ion-item>
+                 
+                    
+                <button ion-button (click)="localnotificationHandler(remind)">確認提醒時間</button>
+                  
+              
                 <ion-button color="dark" expand="block" (click)="addEvent()">Add Event</ion-button>
                 <ion-button color="dark" expand="block" (click)="dialog.hide()">Cancel</ion-button>
               </div>

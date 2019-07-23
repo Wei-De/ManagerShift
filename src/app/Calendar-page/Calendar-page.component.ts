@@ -1,13 +1,14 @@
 import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
-import { AlertController, NavController, ModalController } from '@ionic/angular';
+import { AlertController, NavController, ModalController,Platform } from '@ionic/angular';
 import { formatDate } from '@angular/common';
 import { OnsNavigator, Params } from 'ngx-onsenui';
-
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { WebService } from '../Calendar-Service/web.service';
 
 import { AppComponent } from '../app.component';
 import { MainPageComponent } from '../Main-page/Main-page.component';
+
 
 
 @Component({
@@ -23,8 +24,14 @@ export class CalendarPageComponent implements OnInit {
     startTime: '',
     endTime: '',
     // allDay: false
+  }; 
+  remind =  {
+    startDate:'',
+    alarmTime:''    
   };
-
+  
+  time1:any;
+  time2:any;
   minDate = new Date().toISOString();
 
   eventSource = [];
@@ -34,12 +41,15 @@ export class CalendarPageComponent implements OnInit {
     mode: 'month',
     currentDate: new Date(),
   };
+  
 
   @ViewChild(CalendarComponent) myCal: CalendarComponent;
-
+    
   constructor(private alertCtrl: AlertController,
               public navCtrl: NavController,
               private modalCtrl: ModalController,
+              private localNotifications: LocalNotifications,
+              private plt:Platform,
               // tslint:disable-next-line:variable-name
               private _navigator: OnsNavigator,
               @Inject(LOCALE_ID) private locale: string,
@@ -94,7 +104,23 @@ export class CalendarPageComponent implements OnInit {
     //   this.myCal.loadEvents();
     // });
   }
-
+  // let time = this.alarm.alarmTime.split(':');
+  //   let alarmtime = new Date(alarm.startDate);
+  //   let notification: any = {
+  localnotificationHandler(remind){    
+    let time = this.remind.alarmTime.split(/T|:|,/);     
+    this.time1 =time[1];
+    this.time2 =time[2];     
+    let alarmtime = new Date(this.event.startTime);
+    let notification: any = {
+        id:0,
+        text: '測試鬧鈴',
+        at: new Date(alarmtime.getFullYear(), alarmtime.getMonth(), alarmtime.getDate(),this.time1,this.time2),
+        led: 'FF0000',
+     }
+     this.localNotifications.schedule (notification);
+     this.localNotifications.isScheduled (0);
+  }
   resetEvent() {
     this.event = {
       title: '',
@@ -173,5 +199,5 @@ export class CalendarPageComponent implements OnInit {
     this.event.startTime = selected.toISOString();
     selected.setHours(selected.getHours() + 1);
     this.event.endTime = (selected.toISOString());
-  }
+  }  
 }

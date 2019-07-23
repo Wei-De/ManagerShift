@@ -8,6 +8,7 @@ import { NgCalendarModule  } from 'ionic2-calendar';
 import { IonicModule } from '@ionic/angular';
 // Service
 import { WebService } from './Calendar-Service/web.service';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 // Component
@@ -39,7 +40,7 @@ import { SchedulePageComponent } from './Schedule-page/Schedule-page.component';
     HttpClientModule,
     OnsenModule,
     IonicModule,
-    NgCalendarModule
+    NgCalendarModule,    
   ],
   entryComponents: [logInPageComponent,
                     RgtPageComponent,
@@ -51,7 +52,7 @@ import { SchedulePageComponent } from './Schedule-page/Schedule-page.component';
                     SettingPageComponent,
                     GroupPageComponent,
                     SchedulePageComponent],
-  providers: [WebService],
+  providers: [WebService,LocalNotifications],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

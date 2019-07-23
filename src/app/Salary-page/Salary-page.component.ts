@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { OnsNavigator } from 'ngx-onsenui';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -10,5 +11,29 @@ import { OnsNavigator } from 'ngx-onsenui';
   styleUrls: ['./Salary-page.component.css']
 })
 // tslint:disable-next-line:class-name
-export class SalaryPageComponent {
+export class SalaryPageComponent  implements OnInit {
+  Salary='150'
+
+  Break='30'
+  
+  Today='11000'
+    
+    
+  ngOnInit() {
+    
+  }
+
+
+
+  //選擇計算薪水方式
+  // editSelects(event) {
+  //   document.getElementById('choose-sel').removeAttribute('modifier');
+  //   if (event.target.value == '今日薪水' || event.target.value == '今月薪水') {
+  //     document.getElementById('choose-sel').setAttribute('modifier', event.target.value);
+  //   }
+  // }
+  
 }
+
+
+

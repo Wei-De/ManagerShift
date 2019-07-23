@@ -1,4 +1,4 @@
-#Mon Mar 25 21:38:19 GMT+08:00 2019
-base.0=C\:\\managershift\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Tue Jul 16 01:51:24 CST 2019
+base.0=E\:\\managershift\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
