@@ -9,7 +9,7 @@
       {{ viewTitle }}
     </ion-title>
       <ion-buttons class="addBtn" slot="end">
-        <button ion-button (click)="dialog.show()">
+        <button ion-button (click)="showTemplateDialog()">
           <ion-icon name="add"></ion-icon>
         </button>
       </ion-buttons>
@@ -18,7 +18,7 @@
 <ion-content>
 
   <!-- Dialog for adding a new event -->
-  <ons-dialog animation="default" cancelable #dialog>
+  <!-- <ons-dialog animation="default" cancelable id="dialog">
       <div class="dialog">
         <div class="dialog-container" style="height: 350px;">
           <ons-page>
@@ -42,13 +42,13 @@
                   <ion-datetime displayFormat="YYYY/MM/DD HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
                 </ion-item>
                 <ion-button color="dark" expand="block" (click)="addEvent()">Add Event</ion-button>
-                <ion-button color="dark" expand="block">Cancel</ion-button>
+                <ion-button color="dark" expand="block" (click)="hideDialog('dialog')">Cancel</ion-button>
               </div>
             </div>
           </ons-page>
         </div>
       </div>
-  </ons-dialog>
+  </ons-dialog> -->
   <!--Dialog end-->
 
   <ion-row>
@@ -78,7 +78,7 @@
   </ion-row>
 
   <calendar
-    [eventSource]="eventSource"
+    [eventSource]="eventSources"
     [calendarMode]="calendar.mode"
     [currentDate]="calendar.currentDate"
     (onEventSelected)="onEventSelected($event)"

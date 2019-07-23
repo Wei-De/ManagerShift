@@ -14,9 +14,11 @@ import { logInPageComponent } from '../logIn-page/logIn-page.component';
   styleUrls: ['./Group-page.component.css']
 })
 // tslint:disable-next-line:class-name
-export class GroupPageComponent {
+export class GroupPageComponent implements OnInit {
+  @ViewChild('data') data: logInPageComponent;
 
   title = '選擇創建群組或搜尋群組';
+
 
   CreateGroup = {
     CGP_Name: '',
@@ -33,6 +35,12 @@ export class GroupPageComponent {
     currentUser: {},
     isLogin: false
   };
+  ngOnInit() {
+    // this.data.login.forEach(el => {
+    //   this.loginData.currentUser = el.USER_ID;
+    // });
+    console.log(this.data);
+  }
   // tslint:disable-next-line:variable-name
   constructor(private _navigator: OnsNavigator) {}
 

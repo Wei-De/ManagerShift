@@ -22,9 +22,7 @@ import { SalaryPageComponent } from './Salary-page/Salary-page.component';
 import { SettingPageComponent } from './Setting-page/Setting-page.component';
 import { GroupPageComponent } from './Group-page/Group-page.component';
 import { SchedulePageComponent } from './Schedule-page/Schedule-page.component';
-
-// Dialog Component
-// import { AddEventDialogComponent } from './Calendar-page/AddEventdialog-page/AddEventdialog-page.component';
+import { AddEventPageComponent } from './AddEventCalendar-page/AddEventCalendar-page.component';
 
 
 
@@ -32,7 +30,7 @@ import { SchedulePageComponent } from './Schedule-page/Schedule-page.component';
   declarations: [
     AppComponent, logInPageComponent, RgtPageComponent, MainPageComponent, MemberPageComponent,
     CalendarPageComponent, ChatRoomPageComponent, SalaryPageComponent, SettingPageComponent,
-    GroupPageComponent, SchedulePageComponent
+    GroupPageComponent, SchedulePageComponent, AddEventPageComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +51,8 @@ import { SchedulePageComponent } from './Schedule-page/Schedule-page.component';
                     SalaryPageComponent,
                     SettingPageComponent,
                     GroupPageComponent,
-                    SchedulePageComponent],
+                    SchedulePageComponent,
+                    AddEventPageComponent],
   providers: [WebService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -1,17 +1,14 @@
 import { CalendarComponent } from 'ionic2-calendar/calendar';
-import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
+import { Component, ViewChild, OnInit, Inject, LOCALE_ID, Input } from '@angular/core';
 import { AlertController, NavController, ModalController, Events } from '@ionic/angular';
 import { formatDate } from '@angular/common';
 import { OnsNavigator, Params } from 'ngx-onsenui';
-import {
-  CalendarEvent,
-  CalendarEventTimesChangedEvent
-} from 'angular-calendar';
 
 import { WebService } from '../Calendar-Service/web.service';
 
-import { AppComponent } from '../app.component';
 import { MainPageComponent } from '../Main-page/Main-page.component';
+import { AddEventPageComponent } from '../AddEventCalendar-page/AddEventCalendar-page.component';
+import * as ons from 'onsenui';
 
 
 @Component({
@@ -32,7 +29,7 @@ export class CalendarPageComponent implements OnInit {
   isToday: boolean;
   minDate = new Date().toISOString();
 
-  eventSource = [];
+  eventSources = [];
   viewTitle: any;
   selectedDay = new Date();
 
@@ -53,6 +50,7 @@ export class CalendarPageComponent implements OnInit {
 
   ngOnInit() {
     this.resetEvent();
+    console.log(this.eventSources);
     // const eventbody = {
     //   end: {
     //     dateTime: '2019-05-31T21:00:00+08:00'
@@ -81,23 +79,23 @@ export class CalendarPageComponent implements OnInit {
     // });
 
       // get event
-    this.calendarService.GetEvent().subscribe(res2 => {
-      const getholidays = [];
-      getholidays.push(res2.items);
-      for (let i = 0; i < 74; i++) {
-        const TWholiday = {
-          title: getholidays[0][i].summary,
-          startTime: new Date(getholidays[0][i].start.date),
-          endTime: new Date(getholidays[0][i].end.date)
-        };
-        const start = TWholiday.startTime;
-        const end = TWholiday.endTime;
-        TWholiday.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
-        TWholiday.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() - 1));
-        this.eventSource.push(TWholiday);
-      }
-      this.myCal.loadEvents();
-    });
+    // this.calendarService.GetEvent().subscribe(res2 => {
+    //   const getholidays = [];
+    //   getholidays.push(res2.items);
+    //   for (let i = 0; i < 74; i++) {
+    //     const TWholiday = {
+    //       title: getholidays[0][i].summary,
+    //       startTime: new Date(getholidays[0][i].start.date),
+    //       endTime: new Date(getholidays[0][i].end.date)
+    //     };
+    //     const start = TWholiday.startTime;
+    //     const end = TWholiday.endTime;
+    //     TWholiday.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
+    //     TWholiday.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() - 1));
+    //     this.eventSource.push(TWholiday);
+    //   }
+    //   this.myCal.loadEvents();
+    // });
   }
 
   resetEvent() {
@@ -110,28 +108,34 @@ export class CalendarPageComponent implements OnInit {
     };
   }
   // show new dialog
-  addEventDialog() {
-    // tslint:disable-next-line:no-angle-bracket-type-assertion
-    const dialog = (<HTMLElement> document.getElementById('dialogevent'));
-    // dialog.show();
+  showTemplateDialog() {
+    // const dialog = document.getElementById('dialog');
+    // ons.notification.confirm(dialog);
+    this._navigator.element.pushPage(AddEventPageComponent, {data: {hoge: 'add'}});
+  }
+  // hide new dialog
+  hideDialog(id) {
+    // document
+    // .getElementById(id)
+    // .hide();
   }
 
   // Create the right event format and reload source
-  addEvent() {
-    const eventCopy = {
-      title: this.event.title,
-      startTime:  new Date(this.event.startTime),
-      endTime: new Date(this.event.endTime),
-      desc: this.event.desc
-    };
+  // addEvent() {
+  //   const eventCopy = {
+  //     title: this.event.title,
+  //     startTime:  new Date(this.event.startTime),
+  //     endTime: new Date(this.event.endTime),
+  //     desc: this.event.desc
+  //   };
 
-    // 把事件放進行事曆
-    this.eventSource.push(eventCopy);
+  //   // 把事件放進行事曆
+  //   this.eventSource.push(eventCopy);
 
-    this.myCal.loadEvents();
-    console.log(this.eventSource);
-    this.resetEvent();
-  }
+  //   this.myCal.loadEvents();
+  //   console.log(this.eventSource);
+  //   this.resetEvent();
+  // }
   // Change current month/week/day
  next() {
   // tslint:disable-next-line:no-string-literal
@@ -182,7 +186,7 @@ export class CalendarPageComponent implements OnInit {
     //   }
     // });
 
-    const title = this.eventSource[0].title;
+    const title = this.eventSources[0].title;
     const start = formatDate(event.startTime, 'yyyy/MM/dd HH:mm', this.locale);
     const end = formatDate(event.endTime, 'yyyy/MM/dd HH:mm', this.locale);
 

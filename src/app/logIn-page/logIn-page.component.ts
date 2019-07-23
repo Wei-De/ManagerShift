@@ -24,12 +24,12 @@ export class logInPageComponent implements OnInit {
       USER_ID: '',
       USER_PSW: ''
     };
-    datazzz = this.login.USER_ID;
     loading = false;
     loginData: any = {
       currentUser: {},
       isLogin: false
     };
+    data = this.login;
 
     ngOnInit() {
       if (localStorage.getItem('loginData')) {
@@ -39,6 +39,7 @@ export class logInPageComponent implements OnInit {
         this.loginData.isLogin = false;
         localStorage.setItem('loginData', JSON.stringify(this.loginData));
       }
+      console.log(this.data);
     }
     // tslint:disable-next-line:variable-name
     constructor(private _navigator: OnsNavigator, private inj: Injector) {}
