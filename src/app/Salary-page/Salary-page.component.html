@@ -1,10 +1,42 @@
 <ons-toolbar>
   <div class="left"><ons-back-button>Back</ons-back-button></div>
-  <div class="center">Salary</div>
+  <div class="center">估算薪水</div>
 </ons-toolbar>
   <div class="background"></div>
   <div class="content" class="initial-page">
-    <div style="text-align: center; margin: 10px">
-      <p>This is the Salary page.</p>
-    </div>
+    <ons-page>
+      <ons-select (onchange)="editSelects($event)">
+        <option value="Today">今日薪水</option>
+        <option value="Week">一周薪水</option>
+        <option value="Month">今月薪水</option>
+      </ons-select>
+      <ons-row>
+        <ons-input class="input-text"
+                   placeholder="時薪"
+                   name="Salary"
+                   [(ngModel)]="Salary"
+                   float>
+        </ons-input>
+     </ons-row>
+     <ons-row>
+        <ons-input class="input-text"
+                   placeholder="休息時間"
+                   name="Break"
+                   [(ngModel)]="Break"
+                   float>
+        </ons-input>
+     </ons-row>
+    <ons-row>
+      <ons-input class="input-text"
+                 placeholder="今日薪水"
+                 name="Today"
+                 [(ngModel)]="Today"
+                 disabled="true"
+                 float>
+      </ons-input>
+    </ons-row>
+    <ons-row>
+      <ons-button class="pageBtn" >計算</ons-button>
+    </ons-row>
+  </ons-page>
   </div>

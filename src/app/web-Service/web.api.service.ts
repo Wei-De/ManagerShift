@@ -14,13 +14,14 @@ const httpOptionsholidays = {
   headers: new HttpHeaders({
     Authorization:
     // tslint:disable-next-line:max-line-length
-    'Bearer ya29.Gl1GB1ew2atVUrAoaaaNltdMpHPaOL8r_Bzd9et7HXhDgTCO0C981pSDZGEQJeJsLi9sNMYE_HhCjGmsj79X7398oGFacxZzsD2dYhbI4LBWDsQcDmMM_ZT0lgzV12s',
+    'Bearer ya29.Gl1WB23H1CvSV0g4jEjTzsgvVsywjJPyhtSCGcW8wIV_YDB0p5hSHYBmXps5tEzrXg11GodX0-0nzrHpcN2w46ODL78yZMloOPw_uWM_PGBWfTuELSizbWAd09XBPek',
     'Content-Type': 'application/json'
   })
 };
+const API_PATH = ''; // PRD
 
 @Injectable()
-export class WebService {
+export class WebAPIService {
 
   constructor(private http: HttpClient) {}
 
@@ -37,5 +38,9 @@ export class WebService {
       'https://www.googleapis.com/calendar/v3/calendars/zh.taiwan%23holiday%40group.v.calendar.google.com/events?key=AIzaSyDY6un1bXW5aicpE4IsX4xBRX7plUjAw6M';
 
     return this.http.get(googleUrl, httpOptionsholidays);
+  }
+  // 登入帳號驗證
+  CheckUserIdPwd(data: any): Observable<any> {
+    return this.http.post(API_PATH + 'User/CheckUserIdPwd', data, httpOptions);
   }
 }

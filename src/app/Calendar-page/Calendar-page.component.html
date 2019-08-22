@@ -1,6 +1,6 @@
 <ons-toolbar>
   <div class="left"><ons-back-button>Back</ons-back-button></div>
-  <div class="center">Calendar</div>
+  <div class="center">行事曆</div>
 </ons-toolbar>
 <div class="background"></div>
 <ion-header>
@@ -8,8 +8,8 @@
     <ion-title class="center" >
       {{ viewTitle }}
     </ion-title>
-      <ion-buttons class="addBtn" slot="end">
-        <button ion-button (click)="showTemplateDialog()">
+      <ion-buttons class="addBtn" slot="end" id="addBtn">
+        <button ion-button (click)="onAddEvent()">
           <ion-icon name="add"></ion-icon>
         </button>
       </ion-buttons>
@@ -18,37 +18,28 @@
 <ion-content>
 
   <!-- Dialog for adding a new event -->
-  <!-- <ons-dialog animation="default" cancelable id="dialog">
+  <ons-dialog animation="default" cancelable #dialog>
       <div class="dialog">
         <div class="dialog-container" style="height: 350px;">
-          <ons-page>
+          <ons-page *ngFor="let item of eventSource">
             <ons-toolbar>
-              <div class="center">New Event</div>
+              <div class="center">{{ item.title }}</div>
             </ons-toolbar>
             <div class="content">
               <div style="text-align: center">
-                <ion-item>
-                  <ion-input type="text" placeholder="Title" [(ngModel)]="event.title"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-input type="text" placeholder="Location" [(ngModel)]="event.desc"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Start</ion-label>
-                  <ion-datetime displayFormat="YYYY/MM/DD HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
-                </ion-item>
-                <ion-item>
-                  <ion-label>End</ion-label>
-                  <ion-datetime displayFormat="YYYY/MM/DD HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
-                </ion-item>
-                <ion-button color="dark" expand="block" (click)="addEvent()">Add Event</ion-button>
-                <ion-button color="dark" expand="block" (click)="hideDialog('dialog')">Cancel</ion-button>
+                <ons-list>
+                  <ons-list-header>{{ item.desc }}</ons-list-header>
+                  <ons-list-item>{{ item.startTime }}</ons-list-item>
+                  <ons-list-item>{{ item.endTime }}</ons-list-item>
+                </ons-list>
+                <ons-button  (click)="onEditEvent()">編輯</ons-button>
+                <ons-button  (click)="onDeleteEvent()">刪除</ons-button>
               </div>
             </div>
           </ons-page>
         </div>
       </div>
-  </ons-dialog> -->
+  </ons-dialog>
   <!--Dialog end-->
 
   <ion-row>
@@ -78,7 +69,7 @@
   </ion-row>
 
   <calendar
-    [eventSource]="eventSources"
+    [eventSource]="eventSource"
     [calendarMode]="calendar.mode"
     [currentDate]="calendar.currentDate"
     (onEventSelected)="onEventSelected($event)"

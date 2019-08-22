@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { OnsNavigator } from 'ngx-onsenui';
 // Component
@@ -18,7 +18,7 @@ import { SchedulePageComponent } from '../Schedule-page/Schedule-page.component'
 })
 
 // tslint:disable-next-line:class-name
-export class MainPageComponent {
+export class MainPageComponent implements OnInit {
 
   memeber = MemberPageComponent;
   calendar = CalendarPageComponent;
@@ -29,4 +29,5 @@ export class MainPageComponent {
 
     // tslint:disable-next-line:variable-name
     constructor(private _navigator: OnsNavigator) {}
+    ngOnInit() {}
 }

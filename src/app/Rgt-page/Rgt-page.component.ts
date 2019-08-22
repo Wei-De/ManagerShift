@@ -20,6 +20,7 @@ export class RgtPageComponent implements OnInit {
     USER_Name: '',
     USER_ID: '',
     USER_SEX: '',
+    USER_EMAIL: '',
     USER_PSW: ''
   };
 
@@ -33,11 +34,20 @@ export class RgtPageComponent implements OnInit {
   }
   RgtUP() {
     console.log(this.RgtData);
-    ons.notification.alert({
-      title: '人員註冊',
-      message: '註冊成功',
-      buttonLabel: '確定'
-    })
-    .then(this._navigator.element.popPage());
+    if (this.RgtData.USER_Name.length !== 0 || this.RgtData.USER_ID.length !== 0 || this.RgtData.USER_SEX.length !== 0 ||
+        this.RgtData.USER_EMAIL.length !== 0 || this.RgtData.USER_PSW.length !== 0) {
+          ons.notification.alert({
+            title: '人員註冊',
+            message: '註冊成功',
+            buttonLabel: '確定'
+          })
+          .then(this._navigator.element.popPage());
+        } else {
+          ons.notification.alert({
+            title: '警告',
+            message: '請完整填寫',
+            buttonLabel: '確定'
+          });
+        }
   }
 }

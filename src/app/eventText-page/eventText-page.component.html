@@ -1,0 +1,19 @@
+<ons-page *ngFor="let item of eventDataSource">
+  <ons-toolbar>
+    <div class="left"><ons-back-button>Back</ons-back-button></div>
+    <div class="center">{{ item.title }}</div>
+  </ons-toolbar>
+  <div class="background">
+      <div class="content">
+        <div style="text-align: center">
+          <ons-list>
+            <ons-list-header>{{ item.desc }}</ons-list-header>
+            <ons-list-item>{{ item.startTime }}</ons-list-item>
+            <ons-list-item>{{ item.endTime }}</ons-list-item>
+          </ons-list>
+        </div>
+      </div>
+  </div>
+  <ons-button  (click)="onEditEvent()">編輯</ons-button>
+  <ons-button  (click)="onDeleteEvent()">刪除</ons-button>
+</ons-page>

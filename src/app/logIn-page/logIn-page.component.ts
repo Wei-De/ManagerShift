@@ -5,6 +5,7 @@ import { RgtPageComponent } from '../Rgt-page/Rgt-page.component';
 import { MainPageComponent } from '../Main-page/Main-page.component';
 import { GroupPageComponent } from '../Group-page/Group-page.component';
 import * as ons from 'onsenui';
+import { WebAPIService } from '../web-Service/web.api.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ import * as ons from 'onsenui';
 // tslint:disable-next-line:class-name
 export class logInPageComponent implements OnInit {
 
-  title = 'LogIn';
+  title = '登入';
 
     // 登入
     login = {
@@ -29,7 +30,7 @@ export class logInPageComponent implements OnInit {
       currentUser: {},
       isLogin: false
     };
-    data = this.login;
+
 
     ngOnInit() {
       if (localStorage.getItem('loginData')) {
@@ -39,10 +40,9 @@ export class logInPageComponent implements OnInit {
         this.loginData.isLogin = false;
         localStorage.setItem('loginData', JSON.stringify(this.loginData));
       }
-      console.log(this.data);
     }
     // tslint:disable-next-line:variable-name
-    constructor(private _navigator: OnsNavigator, private inj: Injector) {}
+    constructor(private _navigator: OnsNavigator, private inj: Injector, private webApiService: WebAPIService) {}
 
     // 登入
     loginOp() {
@@ -54,8 +54,31 @@ export class logInPageComponent implements OnInit {
         });
       } else {
         this.loading = true;
-        this._navigator.element.pushPage(GroupPageComponent, {data: {hoge: 'GP'}});
-        console.log(this.login);
+        // this.webApiService.CheckUserIdPwd(this.login).subscribe(res => {
+        //   const loginData: any = {};
+        //   this.loading = false;
+        //   if (res.checkStatus === 'OK') {
+        //     loginData.currentUser = res;
+        //     loginData.currentUser.USER_ID = this.login.USER_ID;
+        //     loginData.isLogin = true;
+        //     localStorage.setItem('loginData', JSON.stringify(loginData));
+
+        //     ons.notification
+        //       .alert({
+        //         title: '人員登入',
+        //         message: '登入成功：' + loginData.currentUser.userName + '您好！',
+        //         buttonLabel: '確定'
+        //       })
+              // .then(this._navigator.element.pushPage(GroupPageComponent, {data: this.login}));
+        //   } else {
+        //     ons.notification.alert({
+        //       title: '人員登入',
+        //       message: '登入失敗！',
+        //       buttonLabel: '確定'
+        //     });
+        //   }
+        // });
+        this._navigator.element.pushPage(GroupPageComponent, {data: this.login});
       }
     }
     // 註冊

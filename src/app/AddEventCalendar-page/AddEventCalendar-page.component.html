@@ -1,5 +1,5 @@
 <ons-toolbar>
-  <div class="center">新增事件</div>
+  <div class="center">{{ eventTitle }}</div>
 </ons-toolbar>
 <div class="background">
   <ons-page>
@@ -8,7 +8,7 @@
         <ons-input class="input-text" placeholder="Title" name="EVENT_TITLE" [(ngModel)]="event.title" float></ons-input>
       </ons-row>
       <ons-row>
-        <ons-input class="input-text" placeholder="Location" name="EVENT_DESC" [(ngModel)]="event.desc" float></ons-input>
+        <ons-input class="input-text" placeholder="Desc" name="EVENT_DESC" [(ngModel)]="event.desc" float></ons-input>
       </ons-row>
       <ons-row>
         <ion-label>Start</ion-label>
@@ -19,7 +19,7 @@
         <ion-datetime displayFormat="YYYY/MM/DD HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
       </ons-row>
       <ons-row>
-        <ons-button class="pageBtn" (click)="addEvent()">新增</ons-button>
+        <ons-button class="pageBtn" (click)="addEvent()">{{ AddorEdit }}</ons-button>
       </ons-row>
       <ons-row>
           <ons-button class="pageBtn" (click)="cancel()">取消</ons-button>

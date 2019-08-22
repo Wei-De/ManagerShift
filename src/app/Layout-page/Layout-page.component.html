@@ -1,0 +1,30 @@
+<ons-toolbar>
+  <div class="center">{{ layoutTitle }}</div>
+</ons-toolbar>
+<div class="background">
+  <ons-page>
+    <div class="content">
+      <ons-row>
+        <ons-input class="input-text" placeholder="人數" [(ngModel)]="layoutdata.title" float></ons-input>
+      </ons-row>
+      <ons-row>
+        <ons-input class="input-text" placeholder="desc" [(ngModel)]="layoutdata.desc" float></ons-input>
+      </ons-row>
+      <ons-row>
+        <ion-label>Start</ion-label>
+        <ion-datetime displayFormat="YYYY/MM/DD HH" pickerFormat="MMM D:HH" [(ngModel)]="layoutdata.startTime" [min]="minDate"></ion-datetime>
+      </ons-row>
+      <ons-row>
+        <ion-label>End</ion-label>
+        <ion-datetime displayFormat="YYYY/MM/DD HH" pickerFormat="MMM D:HH" [(ngModel)]="layoutdata.endTime" [min]="minDate"></ion-datetime>
+      </ons-row>
+      <ons-row>
+        <ons-button class="pageBtn" (click)="confirm()">確定</ons-button>
+      </ons-row>
+      <ons-row>
+          <ons-button class="pageBtn" (click)="cancel()">取消</ons-button>
+      </ons-row>
+    </div>
+  </ons-page>
+</div>
+

@@ -15,10 +15,8 @@ import { logInPageComponent } from '../logIn-page/logIn-page.component';
 })
 // tslint:disable-next-line:class-name
 export class GroupPageComponent implements OnInit {
-  @ViewChild('data') data: logInPageComponent;
 
   title = '選擇創建群組或搜尋群組';
-
 
   CreateGroup = {
     CGP_Name: '',
@@ -39,7 +37,6 @@ export class GroupPageComponent implements OnInit {
     // this.data.login.forEach(el => {
     //   this.loginData.currentUser = el.USER_ID;
     // });
-    console.log(this.data);
   }
   // tslint:disable-next-line:variable-name
   constructor(private _navigator: OnsNavigator) {}
@@ -65,9 +62,9 @@ export class GroupPageComponent implements OnInit {
       });
   }
   CreateGP() {
-    this._navigator.element.pushPage(MainPageComponent, {data: {hoge: 'Create'}});
+    this._navigator.element.pushPage(MainPageComponent);
   }
   SearchGP() {
-    this._navigator.element.pushPage(MainPageComponent, {data: {hoge: 'Search'}});
+    this._navigator.element.pushPage(MainPageComponent);
   }
 }

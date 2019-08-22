@@ -4,10 +4,12 @@ import { AlertController, NavController, ModalController, Events } from '@ionic/
 import { formatDate } from '@angular/common';
 import { OnsNavigator, Params } from 'ngx-onsenui';
 
-import { WebService } from '../Calendar-Service/web.service';
+import { WebAPIService } from '../web-Service/web.api.service';
 
 import { MainPageComponent } from '../Main-page/Main-page.component';
+import { CalendarData } from '../model/CalendarData';
 import { AddEventPageComponent } from '../AddEventCalendar-page/AddEventCalendar-page.component';
+import { eventTextPageComponent } from '../eventText-page/eventText-page.component';
 import * as ons from 'onsenui';
 
 
@@ -18,18 +20,20 @@ import * as ons from 'onsenui';
   styleUrls: ['./Calendar-page.component.css']
 })
 export class CalendarPageComponent implements OnInit {
-  event = {
-    title: '',
-    desc: '',
-    startTime: '',
-    endTime: '',
-    // allDay: false
-  };
+  // event = {
+  //   title: '',
+  //   desc: '',
+  //   startTime: '',
+  //   endTime: '',
+  //   allDay: false
+  // };
+
+  event: CalendarData = new CalendarData();
 
   isToday: boolean;
   minDate = new Date().toISOString();
 
-  eventSources = [];
+  eventSource = [];
   viewTitle: any;
   selectedDay = new Date();
 
@@ -42,15 +46,23 @@ export class CalendarPageComponent implements OnInit {
 
   constructor(private alertCtrl: AlertController,
               public navCtrl: NavController,
-              private modalCtrl: ModalController,
               // tslint:disable-next-line:variable-name
               private _navigator: OnsNavigator,
               @Inject(LOCALE_ID) private locale: string,
-              private calendarService: WebService) {}
-
+              private calendarService: WebAPIService,
+              // tslint:disable-next-line: variable-name
+              private _params: Params) {}
+  eventCopy = {
+    title: this._params.data.title,
+    startTime:  new Date(this._params.data.startTime),
+    endTime: new Date(this._params.data.endTime),
+    desc: this._params.data.desc
+  };
   ngOnInit() {
-    this.resetEvent();
-    console.log(this.eventSources);
+    this.eventSource.push(this.eventCopy);
+    // this.myCal.loadEvents();
+    console.log(this.eventCopy);
+    // this.resetEvent();
     // const eventbody = {
     //   end: {
     //     dateTime: '2019-05-31T21:00:00+08:00'
@@ -93,9 +105,14 @@ export class CalendarPageComponent implements OnInit {
     //     TWholiday.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
     //     TWholiday.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() - 1));
     //     this.eventSource.push(TWholiday);
+    //     // console.log(this.eventSource);
     //   }
     //   this.myCal.loadEvents();
     // });
+  }
+  change() {
+    this.eventSource[0].startTime = formatDate(this.eventCopy.startTime, 'yyyy/MM/dd HH:mm', this.locale);
+    this.eventSource[0].endTime = formatDate(this.eventCopy.endTime, 'yyyy/MM/dd HH:mm', this.locale);
   }
 
   resetEvent() {
@@ -103,39 +120,13 @@ export class CalendarPageComponent implements OnInit {
       title: '',
       desc: '',
       startTime: new Date().toISOString(),
-      endTime: new Date().toISOString(),
-      // allDay: false
+      endTime: new Date().toISOString()
     };
   }
   // show new dialog
-  showTemplateDialog() {
-    // const dialog = document.getElementById('dialog');
-    // ons.notification.confirm(dialog);
+  onAddEvent() {
     this._navigator.element.pushPage(AddEventPageComponent, {data: {hoge: 'add'}});
   }
-  // hide new dialog
-  hideDialog(id) {
-    // document
-    // .getElementById(id)
-    // .hide();
-  }
-
-  // Create the right event format and reload source
-  // addEvent() {
-  //   const eventCopy = {
-  //     title: this.event.title,
-  //     startTime:  new Date(this.event.startTime),
-  //     endTime: new Date(this.event.endTime),
-  //     desc: this.event.desc
-  //   };
-
-  //   // 把事件放進行事曆
-  //   this.eventSource.push(eventCopy);
-
-  //   this.myCal.loadEvents();
-  //   console.log(this.eventSource);
-  //   this.resetEvent();
-  // }
   // Change current month/week/day
  next() {
   // tslint:disable-next-line:no-string-literal
@@ -164,39 +155,60 @@ export class CalendarPageComponent implements OnInit {
     this.viewTitle = title;
   }
 
-  // Calendar event was clicked(編輯事件)
+  // Calendar event was clicked
   async onEventSelected(event: { startTime: string | number | Date; endTime: string | number | Date; title: string; location: string; }) {
-    // tslint:disable-next-line:no-angle-bracket-type-assertion
-    // const dialog = (<HTMLElement> document.getElementById('dialog'));
-    // dialog.show();
-    // dialog.hide().subscribe(result => {
-    //   this.eventSource = result;
-    //   this.eventSource.push(result);
 
-    //   if (result !== 'cancel') {
-    //     // tslint:disable-next-line:one-variable-per-declaration
-    //     const title = result.title,
-    //           desc = result.desc,
-    //           startTime = result.startTime,
-    //           endTime = result.endTime;
-    //     // tslint:disable-next-line:object-literal-key-quotes
-    //     result = { 'title': title, 'desc': desc, 'startTime': startTime, 'endTime': endTime };
+    this._navigator.element.pushPage(eventTextPageComponent, {data: event});
+    // const title = this.eventSource[0].title;
+    // const start = formatDate(event.startTime, 'yyyy/MM/dd HH:mm', this.locale);
+    // const end = formatDate(event.endTime, 'yyyy/MM/dd HH:mm', this.locale);
+    // const alert = await this.alertCtrl.create({
+    //   header: event.title,
+    //   subHeader: event.location,
+    //   message: start + '-' + end,
+    //   buttons: ['編輯', '刪除']
+    // });
+  //   for (let i = 0; i < 2; i++) {
+  //   if (alert.buttons[i].valueOf() === '編輯') {
+  //     console.log(alert.buttons[1].valueOf());
+  //     this.onEditEvent();
+  //   } else {
+  //     this.onDeleteEvent();
+  //   }
+  // }
+    // alert.present();
+  }
 
-    //     this.onEditData(result, event);
+  // Edit event
+  onEditEvent() {
+    this.change();
+    this._navigator.element.pushPage(AddEventPageComponent, {data: this.eventCopy});
+  }
+  // Delete event
+  onDeleteEvent() {
+    // this.eventSource = this.eventSource.filter(
+    //   x => !(x.title === index.title && x.desc === index.desc)
+    // );
+    // this.eventSource.forEach(eventSourceData => {
+    //   if (eventSourceData.startTime === index.startTime) {
+    //     eventSourceData.index.forEach(y => {
+    //       if (y.title === index.title) {
+    //         const eventDataList = y.Data.filter(
+    //           eventData =>
+    //             !(
+    //               eventData.title === index.title &&
+    //               eventData.desc === index.desc
+    //             )
+    //         );
+    //         y.Data = eventDataList;
+    //       }
+    //     });
     //   }
     // });
-
-    const title = this.eventSources[0].title;
-    const start = formatDate(event.startTime, 'yyyy/MM/dd HH:mm', this.locale);
-    const end = formatDate(event.endTime, 'yyyy/MM/dd HH:mm', this.locale);
-
-    const alert = await this.alertCtrl.create({
-      header: event.title,
-      subHeader: event.location,
-      message: start + '-' + end,
-      buttons: ['OK']
-    });
-    alert.present();
+    // localStorage.setItem(
+    //   'deliveryDataList',
+    //   JSON.stringify(this.deliveryDataList)
+    // );
   }
 
   // Time slot was clicked

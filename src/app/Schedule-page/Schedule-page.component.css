@@ -5,3 +5,10 @@
   border:1px solid #050c21;
   color:#000000;
 }
+.calendar-event-inner {
+  background-color: rgb(6, 187, 0) !important;
+  padding: 15px !important;
+  text-align: center !important;
+  font-size: 40px !important;
+  font-weight: bold !important;
+}

@@ -7,7 +7,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { NgCalendarModule  } from 'ionic2-calendar';
 import { IonicModule } from '@ionic/angular';
 // Service
-import { WebService } from './Calendar-Service/web.service';
+import { WebAPIService } from './web-Service/web.api.service';
 
 import { AppRoutingModule } from './app-routing.module';
 // Component
@@ -23,6 +23,8 @@ import { SettingPageComponent } from './Setting-page/Setting-page.component';
 import { GroupPageComponent } from './Group-page/Group-page.component';
 import { SchedulePageComponent } from './Schedule-page/Schedule-page.component';
 import { AddEventPageComponent } from './AddEventCalendar-page/AddEventCalendar-page.component';
+import { eventTextPageComponent } from './eventText-page/eventText-page.component';
+import { LayoutPageComponent } from './Layout-page/Layout-page.component';
 
 
 
@@ -30,7 +32,8 @@ import { AddEventPageComponent } from './AddEventCalendar-page/AddEventCalendar-
   declarations: [
     AppComponent, logInPageComponent, RgtPageComponent, MainPageComponent, MemberPageComponent,
     CalendarPageComponent, ChatRoomPageComponent, SalaryPageComponent, SettingPageComponent,
-    GroupPageComponent, SchedulePageComponent, AddEventPageComponent
+    GroupPageComponent, SchedulePageComponent, AddEventPageComponent, eventTextPageComponent,
+    LayoutPageComponent
   ],
   imports: [
     BrowserModule,
@@ -52,8 +55,10 @@ import { AddEventPageComponent } from './AddEventCalendar-page/AddEventCalendar-
                     SettingPageComponent,
                     GroupPageComponent,
                     SchedulePageComponent,
-                    AddEventPageComponent],
-  providers: [WebService],
+                    AddEventPageComponent,
+                    eventTextPageComponent,
+                    LayoutPageComponent],
+  providers: [WebAPIService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

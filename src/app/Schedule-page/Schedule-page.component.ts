@@ -1,10 +1,12 @@
 import { Component, ViewChild, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
-import { OnsNavigator } from 'ngx-onsenui';
+import { OnsNavigator, Params } from 'ngx-onsenui';
 import { formatDate } from '@angular/common';
 import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { AlertController, NavController } from '@ionic/angular';
-import { WebService } from '../Calendar-Service/web.service';
+import { WebAPIService } from '../web-Service/web.api.service';
+import { LayoutPageComponent } from '../Layout-page/Layout-page.component';
+import { LayoutData } from '../model/LayoutData';
 
 
 @Component({
@@ -17,65 +19,46 @@ import { WebService } from '../Calendar-Service/web.service';
 export class SchedulePageComponent implements OnInit {
   @ViewChild(CalendarComponent) myCal: CalendarComponent;
 
-  event = {
-    title: '',
-    desc: '',
-    startTime: '',
-    endTime: '',
-    // allDay: false
-  };
   eventSource = [];
+  layoutdata: LayoutData = new LayoutData();
   viewTitle;
+  countdata = [];
 
   calendar = {
     mode: 'week',
     currentDate: new Date(),
   };
 
-  ngOnInit() {
-    this.resetEvent();
-  }
-
-  resetEvent() {
-    this.event = {
-      title: '',
-      desc: '',
-      startTime: new Date().toISOString(),
-      endTime: new Date().toISOString(),
-      // allDay: false
-    };
-  }
-  Layout() {}
-
   constructor(private alertCtrl: AlertController,
               public navCtrl: NavController,
               // tslint:disable-next-line:variable-name
               private _navigator: OnsNavigator,
               @Inject(LOCALE_ID) private locale: string,
-              private calendarService: WebService) {}
+              private calendarService: WebAPIService,
+              // tslint:disable-next-line: variable-name
+              private _params: Params) {}
 
-    // Change current month/week/day
- next() {
-  // tslint:disable-next-line:no-string-literal
-  const swiper = document.querySelector('.swiper-container')['swiper'];
-  swiper.slideNext();
-}
+  layoutCopy = {
+    title: this._params.data.title,
+    desc: this._params.data.desc,
+    startTime: new Date(this._params.data.startTime),
+    endTime: new Date(this._params.data.endTime)
+  };
 
-  back() {
-    // tslint:disable-next-line:no-string-literal
-    const swiper = document.querySelector('.swiper-container')['swiper'];
-    swiper.slidePrev();
+  ngOnInit() {
+    this.eventSource.push(this.layoutCopy);
+    console.log(this.layoutCopy);
   }
+
+  Layout() {
+    this._navigator.element.pushPage(LayoutPageComponent, {data: this.countdata});
+  }
+
 
   // Change between month/week/day
   changeMode(mode) {
     this.calendar.mode = mode;
   }
-
-  // // Focus today
-  // today() {
-  //   this.calendar.currentDate = new Date();
-  // }
 
   // Selected date reange and hence title changed
   onViewTitleChanged(title) {
@@ -97,13 +80,12 @@ export class SchedulePageComponent implements OnInit {
       buttons: ['OK']
     });
     alert.present();
-    console.log('11');
   }
     // Time slot was clicked
   onTimeSelected(ev) {
     const selected = new Date(ev.selectedTime);
-    this.event.startTime = selected.toISOString();
+    this.layoutdata.startTime = selected.toISOString();
     selected.setHours(selected.getHours() + 1);
-    this.event.endTime = (selected.toISOString());
+    this.layoutdata.endTime = (selected.toISOString());
   }
 }
