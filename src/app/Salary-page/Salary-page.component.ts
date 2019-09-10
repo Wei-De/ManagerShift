@@ -12,11 +12,21 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 // tslint:disable-next-line:class-name
 export class SalaryPageComponent  implements OnInit {
-  Salary='150'
+  conutSalary : string ='';  
 
-  Break='30'
+  CSalary = [
+      {value: 'day', label: '今日薪水'},
+      {value: 'week', label: '一週薪水'},
+      {value: 'mon', label: '今月薪水'},            
+    ];
   
-  Today='11000'
+  inputData={
+    Hsalary:'150',
+    break:'30分',
+    total:''
+  }
+
+  
     
     
   ngOnInit() {
@@ -25,13 +35,7 @@ export class SalaryPageComponent  implements OnInit {
 
 
 
-  //選擇計算薪水方式
-  // editSelects(event) {
-  //   document.getElementById('choose-sel').removeAttribute('modifier');
-  //   if (event.target.value == '今日薪水' || event.target.value == '今月薪水') {
-  //     document.getElementById('choose-sel').setAttribute('modifier', event.target.value);
-  //   }
-  // }
+  
   
 }
 

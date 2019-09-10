@@ -3,7 +3,114 @@
     <div class="center">Schedule</div>
   </ons-toolbar>
   <div class="background"></div>
-  <ion-header>
+
+  <ons-page>    
+    <div class="background"></div>
+    <div class="content">
+      <div style="margin: 15px">
+        <p>請選擇班表時間、日期以及人數需求</p>
+        <P>選擇日期</P>  
+        <ons-select                    
+                   [(ngModel)]="scheduleDate" 
+                   [attr.modifier]="scheduleDate"
+                   >
+          
+                  <option *ngFor="let modifier of Dates" [value]="modifier.value">
+                          {{modifier.label}}
+                  </option>
+        </ons-select>   
+        <P>選擇時間</P>
+        <ons-col style = "font-size:16px;">
+        Star :        
+        <ons-select                    
+                   [(ngModel)]="scheduleSTime" 
+                   [attr.modifier]="scheduleSTime"                   
+                   >
+          
+                  <option *ngFor="let modifier of STimes" [value]="modifier.value">
+                          {{modifier.label}}
+                  </option>
+        </ons-select> 
+        </ons-col> 
+        <ons-col style = "font-size:16px;">
+        End :        
+        <ons-select                    
+                   [(ngModel)]="scheduleETime" 
+                   [attr.modifie]="scheduleETime"                                     
+                   >
+          
+                  <option *ngFor="let modifie of ETimes" [value]="modifie.value" >
+                          {{modifie.label}}
+                  </option>
+        </ons-select> 
+        </ons-col> 
+        <P>選擇你需要的人員</P>       
+        <ons-select                    
+                   [(ngModel)]="schedulePeople" 
+                   [attr.modifier]="schedulePeople"
+                   >
+          
+                  <option *ngFor="let modifier of People" [value]="modifier.value">
+                          {{modifier.label}}
+                  </option>
+        </ons-select>             
+        <ons-input 
+                  placeholder="星期一班表" 
+                  [(ngModel)]="shiftList[0]"
+                  disabled="disabled"
+                  name="Mon">
+        </ons-input> 
+        <ons-input 
+                  placeholder="星期二班表" 
+                  [(ngModel)]="shiftList[1]"
+                  disabled="disabled"
+                  name="Tue">
+        </ons-input> 
+        <ons-input 
+                  placeholder="星期三班表" 
+                  [(ngModel)]="shiftList[2]"
+                  disabled="disabled"
+                  name="Wed">
+        </ons-input> 
+        <ons-input 
+                  placeholder="星期四班表" 
+                  [(ngModel)]="shiftList[3]"
+                  disabled="disabled"
+                  name="Thu">
+        </ons-input> 
+        <ons-input 
+                  placeholder="星期五班表" 
+                  [(ngModel)]="shiftList[4]"
+                  disabled="disabled"
+                  name="Fri">
+        </ons-input> 
+        <ons-input 
+                  placeholder="星期六班表" 
+                  [(ngModel)]="shiftList[5]"
+                  disabled="disabled"
+                  name="Sat">
+        </ons-input> 
+        <ons-input 
+                  placeholder="星期日班表" 
+                  [(ngModel)]="shiftList[6]"
+                  disabled="disabled"
+                  name="Sun">
+        </ons-input> 
+        <ons-row>
+        <ons-button (click)="onClick()" >新增</ons-button>   
+        <ons-button (click)="onDelect()" >刪除</ons-button>   
+        <ons-button (click)="onRe()" >修改</ons-button>
+        </ons-row>   
+      </div>
+    </div>
+
+  </ons-page>
+
+  
+  
+  
+  
+  <!-- <ion-header>
     <ion-toolbar color="Medium">
       <ion-title class="center" >
         {{ viewTitle }}
@@ -29,4 +136,4 @@
       step="20"
       startingDayWeek="1">
     </calendar>
-  </ion-content>
+  </ion-content> -->

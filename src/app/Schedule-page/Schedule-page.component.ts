@@ -1,10 +1,11 @@
 import { Component, ViewChild, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
-import { OnsNavigator } from 'ngx-onsenui';
+import { OnsNavigator, Params } from 'ngx-onsenui';
 import { formatDate } from '@angular/common';
 import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { AlertController, NavController } from '@ionic/angular';
 import { WebService } from '../Calendar-Service/web.service';
+
 
 
 @Component({
@@ -15,7 +16,106 @@ import { WebService } from '../Calendar-Service/web.service';
 })
 // tslint:disable-next-line:class-name
 export class SchedulePageComponent implements OnInit {
+ 
   @ViewChild(CalendarComponent) myCal: CalendarComponent;
+
+//排班日期
+scheduleDate : string ='22222';  
+
+Dates = [
+    {value: '星期一', label: '星期一'},
+    {value: '星期二', label: '星期二'},
+    {value: '星期三', label: '星期三'},
+    {value: '星期四', label: '星期四'},
+    {value: '星期五', label: '星期五'},
+    {value: '星期六', label: '星期六'},
+    {value: '星期日', label: '星期日'},    
+  ];
+//排班時間
+scheduleSTime : string ='';
+  
+
+STimes = [
+    {value: '6:00',  label:  '6:00'},
+    {value: '7:00',  label:  '7:00'},
+    {value: '8:00',  label:  '8:00'},
+    {value: '9:00',  label:  '9:00'}, 
+    {value: '11:00', label: '11:00'},
+    {value: '12:00', label: '12:00'},
+    {value: '13:00', label: '13:00'},
+    {value: '14:00', label: '14:00'},
+    {value: '15:00', label: '15:00'},
+    {value: '16:00', label: '16:00'},
+    {value: '17:00', label: '17:00'},
+    {value: '18:00', label: '18:00'}, 
+    {value: '19:00', label: '19:00'},
+    {value: '20:00', label: '20:00'},
+    {value: '21:00', label: '21:00'},   
+    {value: '22:00', label: '22:00'},
+    {value: '23:00', label: '23:00'},
+    {value: '24:00', label: '24:00'}, 
+  ];
+
+scheduleETime : string ='';
+
+ETimes = [
+    {value: '6:00',  label:  '6:00'},
+    {value: '7:00',  label:  '7:00'},
+    {value: '8:00',  label:  '8:00'},
+    {value: '9:00',  label:  '9:00'}, 
+    {value: '11:00', label: '11:00'},
+    {value: '12:00', label: '12:00'},
+    {value: '13:00', label: '13:00'},
+    {value: '14:00', label: '14:00'},
+    {value: '15:00', label: '15:00'},
+    {value: '16:00', label: '16:00'},
+    {value: '17:00', label: '17:00'},
+    {value: '18:00', label: '18:00'}, 
+    {value: '19:00', label: '19:00'},
+    {value: '20:00', label: '20:00'},
+    {value: '21:00', label: '21:00'},   
+    {value: '22:00', label: '22:00'},
+    {value: '23:00', label: '23:00'},
+    {value: '24:00', label: '24:00'},    
+];
+//排班人數
+schedulePeople : string ='';
+  
+
+People = [
+    {value: '一人', label: '1'},
+    {value: '兩人', label: '2'},
+    {value: '三人', label: '3'},
+    {value: '四人', label: '4'},
+    {value: '五人', label: '5'},
+    {value: '六人', label: '6'}  
+  ];
+
+
+//總計
+
+shiftList=[];
+
+onClick(){  
+
+  this.shiftList.push(this.scheduleDate+"的"+this.scheduleSTime+"-"+this.scheduleETime+"，需要"+this.schedulePeople)
+  this.shiftList.slice(0,8)
+  
+
+}
+onDelect(){
+  this.shiftList=[]
+}
+
+onRe(){
+ var i;
+  for(i=0 ; i<8 ; i++)
+  {
+    console.log(this.shiftList[i])        
+  }
+  
+}
+
 
   event = {
     title: '',
@@ -52,7 +152,8 @@ export class SchedulePageComponent implements OnInit {
               // tslint:disable-next-line:variable-name
               private _navigator: OnsNavigator,
               @Inject(LOCALE_ID) private locale: string,
-              private calendarService: WebService) {}
+              private calendarService: WebService,
+              private _params: Params) {console.log('parameters:', _params.data);}
 
     // Change current month/week/day
  next() {
@@ -106,4 +207,7 @@ export class SchedulePageComponent implements OnInit {
     selected.setHours(selected.getHours() + 1);
     this.event.endTime = (selected.toISOString());
   }
+  
+  
+  
 }

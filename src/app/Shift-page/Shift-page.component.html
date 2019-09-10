@@ -1,0 +1,115 @@
+<ons-toolbar>
+  <div class="left"><ons-back-button>Back</ons-back-button></div>
+  <div class="center">班表</div>
+</ons-toolbar>
+<div class="background"></div>
+
+<ons-page>    
+  <div class="background"></div>
+  <div class="content">
+    <div style="margin: 15px">
+      <p>請選擇班表時間以及日期</p>     
+      <P>選擇日期</P> 
+      <ons-select                    
+                 [(ngModel)]="shiftDate" 
+                 [attr.modifier]="shiftDate"
+                 >
+        
+                <option *ngFor="let modifier of Dates" [value]="modifier.value">
+                        {{modifier.label}}
+                </option>
+      </ons-select>
+      <ons-list>
+          <ons-list-item>
+            <ons-row>
+              <ons-col width="50%">
+                <ons-row>
+                  <ons-col width="50%"   > <b>時段</b> </ons-col>
+                  <ons-col  width="50%"  > <b>人數</b>  </ons-col>                  
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%" > 6:00-8:00 </ons-col>
+                  <ons-col  width="50%"> 1  </ons-col>
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%"> 8:00-12:00 </ons-col>
+                  <ons-col  width="50%"> 2  </ons-col>
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%"> 12:00-14:00 </ons-col>
+                  <ons-col  width="50%"> 5  </ons-col>
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%"> 14:00-17:00 </ons-col>
+                  <ons-col  width="50%"> 3  </ons-col>
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%"> 17:00-19:00 </ons-col>
+                  <ons-col  width="50%"> 4  </ons-col>
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%"> 19:00-21:00 </ons-col>
+                  <ons-col  width="50%"> 1  </ons-col>
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%"> 21:00-23:00 </ons-col>
+                  <ons-col  width="50%"> 6  </ons-col>
+                </ons-row>
+              </ons-col>
+              <ons-col width="50%">
+                <ons-row>
+                  <ons-col width="50%" > <b>勾選</b> </ons-col>
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%">
+                      <button value="Y" (click)="onDisabled($event)"><ion-icon name="add"></ion-icon> </button>
+                      <button value="N" (click)="onDisabled($event)"><ion-icon name="remove"></ion-icon></button>
+                  </ons-col>
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%">
+                      <button value="Y" (click)="onDisabled($event)"><ion-icon name="add"></ion-icon> </button>
+                      <button value="N" (click)="onDisabled($event)"><ion-icon name="remove"></ion-icon></button>
+                  </ons-col>
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%">
+                      <button value="Y" (click)="onDisabled($event)"><ion-icon name="add"></ion-icon> </button>
+                      <button value="N" (click)="onDisabled($event)"><ion-icon name="remove"></ion-icon></button>
+                  </ons-col>
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%">
+                      <button value="Y" (click)="onDisabled($event)"><ion-icon name="add"></ion-icon> </button>
+                      <button value="N" (click)="onDisabled($event)"><ion-icon name="remove"></ion-icon></button>
+                  </ons-col>
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%">
+                      <button value="Y" (click)="onDisabled($event)"><ion-icon name="add"></ion-icon> </button>
+                      <button value="N" (click)="onDisabled($event)"><ion-icon name="remove"></ion-icon></button>
+                  </ons-col>
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%">
+                      <button value="Y" (click)="onDisabled($event)"><ion-icon name="add"></ion-icon> </button>
+                      <button value="N" (click)="onDisabled($event)"><ion-icon name="remove"></ion-icon></button>
+                  </ons-col>
+                </ons-row>
+                <ons-row>
+                  <ons-col width="50%">
+                      <button value="Y" (click)="onDisabled($event)"><ion-icon name="add"></ion-icon> </button>
+                      <button value="N" (click)="onDisabled($event)"><ion-icon name="remove"></ion-icon></button>
+                  </ons-col>
+                </ons-row>
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+        </ons-list>
+      <ons-row>
+          <ons-button (click)="onClick()" >確定送出</ons-button>                       
+      </ons-row>         
+    </div>
+  </div>
+
+</ons-page>

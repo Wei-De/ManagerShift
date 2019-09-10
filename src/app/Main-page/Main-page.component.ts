@@ -8,6 +8,7 @@ import { ChatRoomPageComponent } from '../ChatRoom-page/ChatRoom-page.component'
 import { SalaryPageComponent } from '../Salary-page/Salary-page.component';
 import { SettingPageComponent } from '../Setting-page/Setting-page.component';
 import { SchedulePageComponent } from '../Schedule-page/Schedule-page.component';
+import { ShiftPageComponent } from '../Shift-page/Shift-page.component';
 
 
 @Component({
@@ -26,6 +27,7 @@ export class MainPageComponent {
   salary = SalaryPageComponent;
   setting = SettingPageComponent;
   schedule = SchedulePageComponent;
+  shift = ShiftPageComponent;
 
     // tslint:disable-next-line:variable-name
     constructor(private _navigator: OnsNavigator) {}
